@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
+    <link rel="stylesheet" href="IMAGES/icons/fontawesome-free-7.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="CSS/container.css">
+    <link rel="stylesheet" href="CSS/text.css">
+    <link rel="stylesheet" href="CSS/buttons.css">
+    <link rel="stylesheet" href="CSS/sakura.css">
+    <link rel="stylesheet" href="CSS/image.css">
+</head>
+
+<body>
+    <canvas class="sakura" id="sakura"></canvas>
     <div class="glass">
         <div class="inner-container">
             <div>
@@ -17,41 +27,39 @@
         </div>
         <div class="inner-container">
             <div class="btn-row">
-                <button class="btn-nav-home" onclick="location.href='articles.html'">文章</button>
-                <button class="btn-nav-home" onclick="location.href='videos.html'">视频</button>
-                <button class="btn-nav-home" onclick="location.href='images.html'">图片</button>
-                <button class="btn-nav-home" onclick="location.href='about.html'">关于</button>
-
+                <button class="btn-nav-home" onclick="location.href='articles.html'">
+                    <span class="text-icon">
+                        <i class="fas fa-file-alt"></i>
+                        <span>文章</span>
+                    </span>
+                </button>
+                <button class="btn-nav-home" onclick="location.href='videos.html'">
+                    <span class="text-icon">
+                        <i class="fas fa-play"></i>
+                        <span>视频</span>
+                    </span>
+                </button>
+                <button class="btn-nav-home" onclick="location.href='images.html'">
+                    <span class="text-icon">
+                        <i class="fas fa-image"></i>
+                        <span>图片</span>
+                    </span>
+                </button>
+                <button class="btn-nav-home" onclick="location.href='about.html'">
+                    <span class="text-icon">
+                        <i class="fas fa-info-circle"></i>
+                        <span>关于</span>
+                    </span>
+                </button>
             </div>
         </div>
         <footer>
-            <div>
-                <div class="stats-item">
-                    <i class="fas fa-eye stats-icon"></i>
-                    <span class="stats-label">总访问人次</span>
-                    <span class="stats-value" id="totalVisits"></span>
-                </div>
-                <div class="stats-item">
-                    <i class="fas fa-users stats-icon"></i>
-                    <span class="stats-label">当前在线</span>
-                    <span class="stats-value" id="onlineUsers"></span>
-                </div>
-            </div>
+            <p class="text-footer">唯深衷之思，可越千载之隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2026 沐咲汐. 保留所有权利.</p>
         </footer>
     </div>
     </div>
-
-
-
-</head>
-
-<body>
-
 </body>
 
-</html>
+<script src="JS/sakura-falling.js"></script>
 
-<link rel="stylesheet" href="CSS/container.css">
-<link rel="stylesheet" href="CSS/text.css">
-<link rel="stylesheet" href="CSS/buttons.css">
-<link rel="stylesheet" href="CSS/image.css">
+</html>
