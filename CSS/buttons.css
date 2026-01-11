@@ -1,0 +1,39 @@
+.btn-row {
+    display: flex;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+
+}
+
+.btn-nav-home {
+    font-family: 'Microsoft YaHei', "Times New Roman";
+    font-size: 20px;
+    color: white;
+    line-height: 1.6;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: 2px 2px 5px white;
+    border-radius: 30px;
+    border:white solid 1px;
+    height: 50px;
+    width: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.4s ease;
+
+}
+
+.btn-nav-home:hover {
+  background: rgba(255, 200, 221, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}

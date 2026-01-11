@@ -5,12 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
-    
+    <div class="glass">
+        <div class="inner-container">
+            <div class="text-title-A">欢迎来到沐咲汐的博客</div>
+            <p class="text-title-B">探索有趣的内容和最新的更新！</p>
+        </div>
+        <div class="inner-container">
+            <div class="btn-row">
+                <button class="btn-nav-home" onclick="location.href='articles.html'">文章</button>
+                <button class="btn-nav-home" onclick="location.href='videos.html'">视频</button>
+                <button class="btn-nav-home" onclick="location.href='images.html'">图片</button>
+                <button class="btn-nav-home" onclick="location.href='about.html'">关于</button>
+
+            </div>
+        </div>
+        <footer>
+            <div>
+                <div class="stats-item">
+                    <i class="fas fa-eye stats-icon"></i>
+                    <span class="stats-label">总访问人次</span>
+                    <span class="stats-value" id="totalVisits"></span>
+                </div>
+                <div class="stats-item">
+                    <i class="fas fa-users stats-icon"></i>
+                    <span class="stats-label">当前在线</span>
+                    <span class="stats-value" id="onlineUsers"></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+
+
 </head>
 
 <body>
 
 </body>
 
-
 </html>
+
+<link rel="stylesheet" href="CSS/container.css">
+<link rel="stylesheet" href="CSS/text.css">
+<link rel="stylesheet" href="CSS/buttons.css">

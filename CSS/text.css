@@ -1,0 +1,60 @@
+.text
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.text-title-A
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 34px;
+    color: #ffc0cb;
+    font-weight: bold;
+    margin: 30px 0 20px 20px;
+    letter-spacing: 1px;
+
+}
+
+
+.text-title-B
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 15px;
+    color: white;
+    font-weight: thin;
+    margin: -5px 0 20px 20px;
+    letter-spacing: 1px;
+}
+
+
+.text-body
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 14px;
+    color: black;
+    line-height: 1.6;
+    margin: 10px 0 10px 10px;
+}
+
+
+.text-nav
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.6;
+    margin: 10px 0 10px 10px;
+}
+
+
+.text-footer
+{
+    font-family: 'Microsoft YaHei',  "Times New Roman";
+    font-size: 12px;
+    color: gray;
+    line-height: 1.6;
+    margin: 10px 0 10px 10px;
+}
