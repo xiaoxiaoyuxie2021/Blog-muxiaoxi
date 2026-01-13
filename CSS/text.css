@@ -100,9 +100,9 @@
     }
 
     .text-icon-sm {
-        padding: 15px 0 0 10px;
-    }
-    .text-icon-sm {
+        padding: 15px 0 0 0px;
         margin-left: -25px;
+        align-items: center ;
+        text-align: center;
     }
 }
