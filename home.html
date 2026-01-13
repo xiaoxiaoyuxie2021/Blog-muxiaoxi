@@ -18,15 +18,37 @@
     <link rel="stylesheet" href="CSS/sakura.css">
     <link rel="stylesheet" href="CSS/image.css">
     <link rel="stylesheet" href="CSS/scrollbar.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/components.css">
 </head>
 
 <body>
     <canvas class="sakura" id="sakura"></canvas>
     <div class="glass">
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display: none">
+            <img id="lightbox-img" src="" alt="图片">
+        </div>
         <div class="inner-container">
             <div>
                 <div class="text-title-A">欢迎来到沐咲汐的博客</div>
                 <p class="text-title-B">探索有趣的内容和最新的更新！</p>
+                <div class="text-icon-sm">
+                    <span class="text-icon-sm-bili">
+                        <a href="https://space.bilibili.com/431028772" target="_blank"><i class="fab fa-bilibili"></i></a>
+                    </span>
+                    <span class="text-icon-sm-dy">
+                        <a href=" https://v.douyin.com/QgUk6PP048g" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </span>
+                    <span class="text-icon-sm-qq">
+                        <i class="fab fa-qq" onclick="openLightbox('/IMAGES/mypic/qq-qrcode.jpg')"></i>
+                    </span>
+                    <span class="text-icon-sm-wx">
+                        <i class="fas fa-comment-dots" onclick="openLightbox('/IMAGES/mypic/wx-qrcode.png')"></i>
+                    </span>
+                    <span class="text-icon-sm-git">
+                        <a href="https://github.com/xiaoxiaoyuxie2021" target="_blank"><i class="fab fa-github"></i></a>
+                    </span>
+                </div>
             </div>
             <div class="my-info">
                 <img src="/IMAGES/avatar/my_avatar.jpg" alt="头像" class="avatar-large">
@@ -66,6 +88,7 @@
     </div>
     </div>
     <script src="js/sakura-falling.js"></script>
+    <script src="js/Lightbox.js"></script>
 </body>
 
 </html>

@@ -51,6 +51,37 @@
     gap: 8px;
 }
 
+.text-icon-sm {
+    padding: 0 0 0 20px;
+}
+
+.text-icon-sm-bili {
+    font-size: 25px;
+    color: #00A1D6;
+}
+
+.text-icon-sm-dy {
+    font-size: 25px;
+    color: #fe2c55;
+}
+
+.text-icon-sm-git {
+    font-size: 25px;
+    color: white;
+}
+
+.text-icon-sm-qq {
+    font-size: 25px;
+    color: #12b7f5;
+    cursor: pointer;
+}
+
+.text-icon-sm-wx {
+    font-size: 25px;
+    color: #07c160;
+    cursor: pointer;
+}
+
 @media(max-width:768px) {
     .text-title-A {
         margin: 90px -20px 20px -20px;
@@ -62,6 +93,9 @@
 
     .text-title-B {
         margin: 20px -80px 0px -10px;
+    }
 
+    .text-icon-sm {
+        padding: 15px 0 0 10px;
     }
 }
