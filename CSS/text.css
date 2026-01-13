@@ -62,7 +62,6 @@
 
 .text-icon-sm-dy {
     font-size: 25px;
-    color: #fe2c55;
 }
 
 .text-icon-sm-git {
@@ -82,6 +81,11 @@
     cursor: pointer;
 }
 
+.text-icon-sm-wb {
+    font-size: 25px;
+    color: #fe2c55;
+}
+
 @media(max-width:768px) {
     .text-title-A {
         margin: 90px -20px 20px -20px;
@@ -97,5 +101,8 @@
 
     .text-icon-sm {
         padding: 15px 0 0 10px;
+    }
+    .text-icon-sm {
+        margin-left: -25px;
     }
 }
