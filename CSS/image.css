@@ -11,3 +11,20 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+@media(max-width:768px){
+.my-info{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+}
+.avatar-large{
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    position: relative;
+    top: -120px;
+}
+}

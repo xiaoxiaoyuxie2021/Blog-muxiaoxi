@@ -50,3 +50,18 @@
     align-items: center;
     gap: 8px;
 }
+
+@media(max-width:768px) {
+    .text-title-A {
+        margin: 90px -20px 20px -20px;
+        font-size: 28px;
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+    }
+
+    .text-title-B {
+        margin: 20px -80px 0px -10px;
+
+    }
+}

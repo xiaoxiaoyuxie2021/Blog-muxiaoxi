@@ -6,7 +6,10 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -34,4 +37,11 @@ footer {
   text-align: center;
   font-size: 14px;
   color: #fff;
+}
+
+@media(max-width:768px){
+.inner-container{
+  padding: 40px;
+
+}
 }
