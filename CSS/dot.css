@@ -1,0 +1,267 @@
+.floating-music-player {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9998;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.music-player-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.music-disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(244, 143, 177, 0.4);
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateDisc 20s linear infinite;
+  animation-play-state: paused;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.music-disc.playing {
+  animation-play-state: running;
+}
+
+.music-cover {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.music-center-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.expanded-player {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(244, 143, 177, 0.3);
+  padding: 15px;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 9999;
+}
+
+.expanded-player.expanded {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.player-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.player-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-artist {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.player-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #666;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.player-play {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #666;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.player-close:hover {
+  background: #fdf2f8;
+  color: #f48fb1;
+}
+
+.player-play:hover {
+  background: #fdf2f8;
+  color: #f48fb1;
+}
+
+.player-progress {
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  background: #f0f0f0;
+  border-radius: 2px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f48fb1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.progress-bar::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #ec4899;
+}
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+}
+
+/* 旋转动画 */
+@keyframes rotateDisc {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 教程提示 */
+.tutorial-tip {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(244, 143, 177, 0.3);
+  z-index: 10000;
+  max-width: 280px;
+  animation: fadeInUp 0.5s ease;
+}
+
+.tutorial-content p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.tutorial-close {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #f48fb1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.tutorial-close:hover {
+  background: #ec4899;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 隐藏教程提示 */
+.tutorial-tip.hidden {
+  display: none;
+}

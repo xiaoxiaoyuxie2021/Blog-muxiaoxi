@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="CSS/sakura.css">
     <link rel="stylesheet" href="CSS/image.css">
     <link rel="stylesheet" href="CSS/scrollbar.css">
+    <link rel="stylesheet" href="CSS/dot.css">
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/components.css">
 </head>
@@ -34,7 +35,8 @@
                 <p class="text-title-B">探索有趣的内容和最新的更新！</p>
                 <div class="text-icon-sm">
                     <span class="text-icon-sm-bili">
-                        <a href="https://space.bilibili.com/431028772" target="_blank"><i class="fab fa-bilibili"></i></a>
+                        <a href="https://space.bilibili.com/431028772" target="_blank"><i
+                                class="fab fa-bilibili"></i></a>
                     </span>
                     <span class="text-icon-sm-dy">
                         <a href=" https://v.douyin.com/QgUk6PP048g" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -85,10 +87,54 @@
         <footer>
             <p class="text-footer">唯深衷之思，可越千载之隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2026 沐咲汐. 保留所有权利.</p>
         </footer>
-    </div>
+        <audio id="bgMusic" loop preload="metadata">
+            <source src="resource/audio/test/*.mp3" type="audio/mpeg">
+        </audio>
+        <div class="floating-music-player" id="floatingMusicPlayer">
+            <div class="music-player-container" id="musicPlayerContainer">
+                <div class="music-disc" id="musicDisc">
+                    <img src="resource/pic/audio-thumbnail.jpg" alt="音乐封面" class="music-cover" id="musicCover">
+                    <div class="music-center-dot"></div>
+                </div>
+                <div class="expanded-player" id="expandedPlayer">
+                    <div class="player-header">
+                        <div class="player-cover">
+                            <img src="resource/pic/audio-thumbnail.jpg" alt="音乐封面" class="player-cover-img">
+                        </div>
+                        <div class="player-info">
+                            <div class="music-title" id="musicTitle">xxx</div>
+                            <div class="music-artist" id="musicArtist">xxx</div>
+                        </div>
+                        <div class="player-controls">
+                            <button class="player-play" id="playerPlayBtn">
+                                <i class="fas fa-pause" id="playerPlayIcon"></i>
+                            </button>
+                            <button class="player-close" id="playerCloseBtn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-progress">
+                        <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100">
+                        <div class="time-info">
+                            <span id="currentTime">00:00</span>
+                            <span id="duration">00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial-tip" id="tutorialTip">
+                <div class="tutorial-content">
+                    <p>🌸 点击圆形音乐图标可展开播放器</p>
+                    <p>🎵 再次点击封面可收起播放器</p>
+                    <button class="tutorial-close" id="tutorialClose">了解</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/sakura-falling.js"></script>
     <script src="js/Lightbox.js"></script>
+    <script src="js/dot.js"></script>
 </body>
 
 </html>
