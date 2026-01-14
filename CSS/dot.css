@@ -140,18 +140,22 @@
 }
 
 .player-play {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  color: #666;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f48fb1;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.player-play:hover {
+    background: #ec4899;
 }
 
 .player-close:hover {
@@ -159,10 +163,6 @@
   color: #f48fb1;
 }
 
-.player-play:hover {
-  background: #fdf2f8;
-  color: #f48fb1;
-}
 
 .player-progress {
   width: 100%;
