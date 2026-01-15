@@ -1,10 +1,10 @@
 .floating-music-player {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 1.8rem;
+  right: 1.8rem;
   z-index: 9998;
-  width: 60px;
-  height: 60px;
+  width: 3.7rem;
+  height: 3.7rem;
   cursor: pointer;
 }
 
@@ -44,8 +44,8 @@
 
 .music-center-dot {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 0.8rem;
+  height: 0.8rem;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
   z-index: 2;
@@ -56,12 +56,12 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 300px;
+  width: 19rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(244, 143, 177, 0.3);
-  padding: 15px;
+  padding: 1rem;
   transform: scale(0);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -76,15 +76,15 @@
 .player-header {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.6rem;
 }
 
 .player-cover {
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 8px;
   overflow: hidden;
-  margin-right: 10px;
+  margin-right: 0.6rem;
   flex-shrink: 0;
 }
 
@@ -100,17 +100,17 @@
 }
 
 .music-title {
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 3px;
+  margin-bottom: 0.2rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .music-artist {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #666;
   white-space: nowrap;
   overflow: hidden;
@@ -120,13 +120,13 @@
 .player-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-left: 10px;
+  gap: 0.5rem;
+  margin-left: 0.6rem;
 }
 
 .player-close {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   background: #f8f9fa;
   color: #666;
@@ -135,13 +135,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.9rem;
   transition: background 0.2s;
 }
 
 .player-play {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: #f48fb1;
     color: white;
@@ -150,7 +150,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.9rem;
     transition: background 0.2s;
 }
 
@@ -170,18 +170,18 @@
 
 .progress-bar {
   width: 100%;
-  height: 4px;
+  height: 0.25rem;
   -webkit-appearance: none;
   background: #f0f0f0;
   border-radius: 2px;
   outline: none;
-  margin-bottom: 5px;
+  margin-bottom: 0.3rem;
 }
 
 .progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 50%;
   background: #f48fb1;
   cursor: pointer;
@@ -196,7 +196,7 @@
 .time-info {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 0.8rem;
   color: #666;
 }
 
@@ -211,37 +211,36 @@
   }
 }
 
-/* 教程提示 */
 .tutorial-tip {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
+  bottom: 6.2rem;
+  right: 1.8rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  padding: 15px;
+  padding: 0.9rem;
   box-shadow: 0 5px 20px rgba(244, 143, 177, 0.3);
   z-index: 10000;
-  max-width: 280px;
+  max-width: 17.5rem;
   animation: fadeInUp 0.5s ease;
 }
 
 .tutorial-content p {
   margin: 5px 0;
-  font-size: 14px;
+  font-size: 0.8rem;
   color: #333;
   line-height: 1.4;
 }
 
 .tutorial-close {
-  margin-top: 10px;
+  margin-top: 0.6rem;
   padding: 6px 12px;
   background: #f48fb1;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.7rem;
   transition: background 0.2s;
 }
 
@@ -261,7 +260,13 @@
   }
 }
 
-/* 隐藏教程提示 */
 .tutorial-tip.hidden {
   display: none;
+}
+
+@media(max-width:404px) {
+.expanded-player {
+  width: 16rem;
+  height: 6rem;
+}
 }

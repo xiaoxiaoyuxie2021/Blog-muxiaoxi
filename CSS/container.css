@@ -1,6 +1,6 @@
 .glass {
   position: fixed;
-  inset: 15px;
+  inset: 1rem;
   background: rgba(255, 255, 255, .2);
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
@@ -13,8 +13,8 @@
 }
 
 .inner-container {
-  margin: 20px;
-  padding: 20px;
+  margin: 1.2rem;
+  padding: 1.2rem;
   background-color: rgba(255, 255, 255, .25);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
@@ -23,7 +23,7 @@
 
 @media(max-width:768px){
 .inner-container{
-  padding: 40px;
+  padding: 2.5rem;
 
 }
 }

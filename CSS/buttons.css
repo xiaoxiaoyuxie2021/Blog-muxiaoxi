@@ -4,26 +4,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px;
+    gap: 12.5rem;
 
 }
 
 .btn-nav-home {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 20px;
+    font-size: 1.1rem;
     color: white;
     line-height: 1.6;
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px 16px;
+    padding: 0.6rem 1rem;
     background-color: rgba(255, 255, 255, 0);
     border: none;
     box-shadow: 2px 2px 5px white;
     border-radius: 30px;
     border:white solid 1px;
-    height: 50px;
-    width: 120px;
+    height: 3rem;
+    width: 7rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -40,15 +40,15 @@
 
 @media(max-width:768px){
 .btn-row{
-    gap:40px;
+    gap:2.5rem;
     display: grid;
-    grid-template-columns: repeat(2,minmax(100px,160px));
+    grid-template-columns: repeat(2,minmax(6rem,10rem));
     justify-items: center;
 
 }
 .btn-nav-home{
     line-height: 1.3;
-    font-size: 16px;
+    font-size: 1rem;
     white-space: nowrap;
 }
 }

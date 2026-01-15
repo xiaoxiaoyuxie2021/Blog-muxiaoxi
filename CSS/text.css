@@ -1,46 +1,46 @@
 .text {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     line-height: 1.6;
-    margin: 10px 0;
+    margin: 0.6rem 0;
 }
 
 .text-title-A {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 34px;
+    font-size: 2.1rem;
     color: #ffc0cb;
     font-weight: bold;
-    margin: 30px 0 20px 20px;
-    letter-spacing: 1px;
+    margin: 1.8rem 0 1.2rem 1.2rem;
+    letter-spacing: 0.06rem;
 
 }
 
 
 .text-title-B {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 15px;
+    font-size: 1rem;
     color: white;
     font-weight: thin;
-    margin: -5px 0 20px 20px;
-    letter-spacing: 1px;
+    margin: -0.3rem 0 1.2rem 1.2rem;
+    letter-spacing: 0.06rem;
 }
 
 
 .text-body {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 14px;
+    font-size: 0.9rem;
     color: black;
     line-height: 1.6;
-    margin: 10px 0 10px 10px;
+    margin: 0.6rem 0 0.6rem 0.6rem;
 }
 
 .text-footer {
     font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 12px;
+    font-size: 0.7rem;
     color: white;
     line-height: 1.6;
-    margin: 10px 0 10px 10px;
+    margin: 0.6rem 0 0.6rem 0.6rem;
     display: flex;
     align-items: center;
 }
@@ -48,54 +48,58 @@
 .text-icon {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 1rem;
 }
 
 .text-icon-sm {
-    padding: 0 0 0 20px;
+    padding: 0 0 0 1.2rem;
 }
 
 .text-icon-sm-bili {
-    font-size: 25px;
+    font-size: 1.6rem;
     color: #00A1D6;
 }
 
 .text-icon-sm-dy {
-    font-size: 25px;
+    font-size: 1.6rem;
     color: #fe2c55
 }
 
 .text-icon-sm-git {
-    font-size: 25px;
+    font-size: 1.6rem;
     color: white;
 }
 
 .text-icon-sm-qq {
-    font-size: 25px;
+    font-size: 1.6rem;
     color: #12b7f5;
     cursor: pointer;
 }
 
 .text-icon-sm-wx {
-    font-size: 25px;
+    font-size: 1.6rem;
     color: #07c160;
     cursor: pointer;
 }
 
 @media(max-width:768px) {
     .text-title-A {
-        margin: 90px -20px 20px -20px;
-        font-size: 28px;
+        margin: 5.6rem -1.2rem 1.2rem -1.2rem;
+        font-size: 1.7rem;
         white-space: normal;
         word-break: break-word;
         text-align: center;
     }
 
     .text-title-B {
-        margin: 20px -80px 0px -10px;
+        margin: 1.2rem -5rem 0 -4rem;
+        text-align: center;
+
     }
 
     .text-icon-sm {
-        padding: 15px 0 0 10px;
+        padding: 0.9rem 0 0 0;
+        text-align: center;
+
     }
 }
