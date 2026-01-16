@@ -8,6 +8,8 @@
         const node = tpl.content.cloneNode(true);
         m.dialog.innerHTML = '';
         m.dialog.appendChild(node);
+        // 通知其他脚本：switchto 弹窗已打开（内容已插入 DOM），便于更新动态按钮文字
+        try{ document.dispatchEvent(new CustomEvent('switchto-opened')); }catch(e){}
         const cancel = m.dialog.querySelector('.modal-cancel');
         const confirm = m.dialog.querySelector('.modal-confirm');
         if (cancel) cancel.addEventListener('click', function (e) { e && e.stopPropagation && e.stopPropagation(); m.close(); });

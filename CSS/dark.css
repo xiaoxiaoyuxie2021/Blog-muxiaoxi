@@ -1,0 +1,103 @@
+html[data-theme="dark"] body {
+  background-color: #07101a;
+  background-image: none;
+  color: #dbe8ff;
+}
+
+html[data-theme="dark"] .glass{
+  background: rgba(8,12,18,0.66);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  color: #dbe8ff;
+}
+
+html[data-theme="dark"] footer{
+  color: #c8d7ea;
+}
+
+html[data-theme="dark"] .text,
+html[data-theme="dark"] .text-body,
+html[data-theme="dark"] .text-footer,
+html[data-theme="dark"] .text-title-B{
+  color: #dbe8ff;
+}
+
+html[data-theme="dark"] .text-title-A{
+  color: #ffb7d6;
+}
+
+html[data-theme="dark"] .btn-nav-home{
+  color: #e6eef6;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.02);
+}
+
+html[data-theme="dark"] .btn-nav-home:hover{
+  background: rgba(255,200,221,0.06);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+html[data-theme="dark"] .btn-switchto,
+html[data-theme="dark"] .btn-switchto-choice{
+  color: #e6eef6;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+}
+
+html[data-theme="dark"] .avatar-large{
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+html[data-theme="dark"] .lightbox{
+  background: rgba(0,0,0,0.95);
+}
+
+html[data-theme="dark"] .music-player-container,
+html[data-theme="dark"] .music-disc{
+  background: transparent;
+}
+
+html[data-theme="dark"] .text-icon-sm-bili { color: white; }
+html[data-theme="dark"] .text-icon-sm-dy { color: white; }
+html[data-theme="dark"] .text-icon-sm-git { color: white; }
+html[data-theme="dark"] .text-icon-sm-qq { color: white; }
+html[data-theme="dark"] .text-icon-sm-wx { color: white; }
+
+@media (max-width:768px){
+  html[data-theme="dark"] .text-title-A,
+  html[data-theme="dark"] .text-title-B { text-shadow: none; }
+}
+
+html[data-theme="dark"] .switchto-overlay {
+  background: rgba(0,0,0,0.45) !important;
+}
+
+html[data-theme="dark"] .switchto-dialog {
+  background: rgba(0,0,0,0.25) !important;
+  color: white !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25) !important;
+  border: white solid 1px !important;
+}
+
+html[data-theme="dark"] .switchto-dialog .modal-content,
+html[data-theme="dark"] .switchto-dialog h3,
+html[data-theme="dark"] .switchto-dialog p {
+  color: inherit !important;
+}
+
+html[data-theme="dark"] .switchto-dialog .btn-switchto-choice {
+  color: white !important;
+  border: 1px solid white !important;
+  background: grey !important;
+  border-radius: 16px !important;
+  padding: 0.45rem 0.8rem !important;
+  transition: background .18s ease, box-shadow .18s ease, transform .12s ease;
+}
+
+html[data-theme="dark"] .switchto-dialog .btn-switchto-choice:hover{
+  background: #f4f6f8 !important;
+  transform: translateY(-1px) !important;
+}
+
+
+

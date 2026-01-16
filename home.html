@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="stylesheet" href="CSS/animations.css">
+    <link rel="stylesheet" href="CSS/dark.css">
 </head>
 
 <body>
@@ -142,10 +143,13 @@
                     <h3 style="margin:0 0 0.5rem;">主题</h3>
                     <p>
                         <button class="btn-switchto-choice" onclick=" location.href='home-simple.html'">简洁版</button>
+                        <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版" data-theme-label-light="浅色版">深色版</button>
                     </p>
                     <h3 style="margin:2rem 0 0.5rem;">语言</h3>
-                    <p>
-                        <button class="btn-switchto-choice" onclick=" location.href='home.html'">English</button>
+                    <p>                                        
+                        <button class="btn-switchto-choice" onclick=" location.href='home.html#en'">English</button>
+                        <button class="btn-switchto-choice" onclick=" location.href='home.html#ja'">日本語</button>
+                        <button class="btn-switchto-choice" onclick=" location.href='home.html#zh-traditional'">繁體中文</button>
                     </p>
                 </div>
         </div>
@@ -159,6 +163,7 @@
     </button>
     </div>
     <script defer src="js/sakura-falling.js"></script>
+    <script defer src="js/darkmode.js"></script>
     <script defer src="js/Lightbox.js"></script>
     <script defer src="js/dot.js"></script>
     <script defer src="js/switchto.js"></script>
