@@ -5,7 +5,7 @@ a{
 
 body {
   background-color: linear-gradient(135deg, #667eea 0% #764ba2 100%);
-  background-image: url("../IMAGES/background/sakura-unsplash_compressed.jpg");
+  background-image: url("/Resource/IMAGES/background/sakura-unsplash_compressed.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
