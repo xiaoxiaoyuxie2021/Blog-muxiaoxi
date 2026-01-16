@@ -52,11 +52,102 @@
         const durationEl = document.getElementById('duration');
 
         // Toggle expanded player by clicking disc — use class to match CSS animation
+        // Also support mobile long-press to start dragging the floating player
         if(musicDisc && expanded){
+            let wasLongPress = false;
+            let wasLongPressMouse = false;
             bind(musicDisc, 'click', function(e){
+                if (wasLongPress || wasLongPressMouse) { wasLongPress = wasLongPressMouse = false; return; }
                 expanded.classList.toggle('expanded');
                 e && e.stopPropagation && e.stopPropagation();
             });
+
+            // Drag support variables
+            const floating = document.getElementById('floatingMusicPlayer');
+            let touchTimer = null;
+            let isTouchDragging = false;
+            let startTouchX = 0, startTouchY = 0, origX = 0, origY = 0;
+
+            function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+
+            // touchstart: set timer for long-press
+            musicDisc.addEventListener('touchstart', function(evt){
+                if (!floating) return;
+                const t = evt.touches[0];
+                startTouchX = t.clientX; startTouchY = t.clientY;
+                origX = floating.offsetLeft || 0; origY = floating.offsetTop || 0;
+                wasLongPress = false;
+                touchTimer = setTimeout(function(){
+                    isTouchDragging = true;
+                    wasLongPress = true;
+                    try { document.body.style.userSelect = 'none'; } catch(e){}
+                }, 300);
+            }, { passive: true });
+
+            // touchmove: if dragging, move the floating element
+            document.addEventListener('touchmove', function(evt){
+                if (!isTouchDragging || !floating) return;
+                evt.preventDefault();
+                const t = evt.touches[0];
+                const dx = t.clientX - startTouchX;
+                const dy = t.clientY - startTouchY;
+                const newX = origX + dx;
+                const newY = origY + dy;
+                floating.style.left = clamp(newX, 0, window.innerWidth - floating.offsetWidth) + 'px';
+                floating.style.top = clamp(newY, 0, window.innerHeight - floating.offsetHeight) + 'px';
+                floating.style.right = 'auto';
+                floating.style.bottom = 'auto';
+            }, { passive: false });
+
+            // touchend/cancel: stop dragging and clear timer
+            function endTouchDrag(){
+                if (touchTimer) { clearTimeout(touchTimer); touchTimer = null; }
+                if (isTouchDragging) {
+                    isTouchDragging = false;
+                    try { document.body.style.userSelect = ''; } catch(e){}
+                }
+            }
+            document.addEventListener('touchend', endTouchDrag);
+            document.addEventListener('touchcancel', endTouchDrag);
+
+            // --- Mouse long-press drag for desktop ---
+            let mouseTimer = null;
+            let isMouseDragging = false;
+            let startMouseX = 0, startMouseY = 0, origMouseX = 0, origMouseY = 0;
+
+            musicDisc.addEventListener('mousedown', function(evt){
+                if (!floating || evt.button !== 0) return; // left button only
+                startMouseX = evt.clientX; startMouseY = evt.clientY;
+                origMouseX = floating.offsetLeft || 0; origMouseY = floating.offsetTop || 0;
+                wasLongPressMouse = false;
+                mouseTimer = setTimeout(function(){
+                    isMouseDragging = true;
+                    wasLongPressMouse = true;
+                    try { document.body.style.userSelect = 'none'; } catch(e){}
+                }, 300);
+            });
+
+            document.addEventListener('mousemove', function(evt){
+                if (!isMouseDragging || !floating) return;
+                const dx = evt.clientX - startMouseX;
+                const dy = evt.clientY - startMouseY;
+                const newX = origMouseX + dx;
+                const newY = origMouseY + dy;
+                floating.style.left = clamp(newX, 0, window.innerWidth - floating.offsetWidth) + 'px';
+                floating.style.top = clamp(newY, 0, window.innerHeight - floating.offsetHeight) + 'px';
+                floating.style.right = 'auto';
+                floating.style.bottom = 'auto';
+            });
+
+            function endMouseDrag(){
+                if (mouseTimer) { clearTimeout(mouseTimer); mouseTimer = null; }
+                if (isMouseDragging) {
+                    isMouseDragging = false;
+                    try { document.body.style.userSelect = ''; } catch(e){}
+                }
+            }
+            document.addEventListener('mouseup', endMouseDrag);
+            document.addEventListener('mouseleave', endMouseDrag);
         }
 
         // Close button for expanded player — remove `expanded` class so toggle still works
