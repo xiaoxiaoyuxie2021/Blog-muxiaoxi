@@ -88,12 +88,8 @@
                 readyToDragTouch = false;
                 if (touchTimer) { clearTimeout(touchTimer); touchTimer = null; }
                 touchTimer = setTimeout(function(){
-                    // signal ready to drag, and prevent long-press menu immediately
+                    // signal ready to drag, but don't yet prevent defaults
                     readyToDragTouch = true;
-                    if (!preventContext) {
-                        preventContext = function(ev){ ev.preventDefault(); };
-                        document.addEventListener('contextmenu', preventContext);
-                    }
                 }, LONG_PRESS_MS);
             }, { passive: true });
 
@@ -158,10 +154,6 @@
                 if (mouseTimer) { clearTimeout(mouseTimer); mouseTimer = null; }
                 mouseTimer = setTimeout(function(){
                     readyToDragMouse = true;
-                    if (!preventContext) {
-                        preventContext = function(ev){ ev.preventDefault(); };
-                        document.addEventListener('contextmenu', preventContext);
-                    }
                 }, LONG_PRESS_MS);
             });
 
