@@ -1,0 +1,69 @@
+.switchto-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999
+}
+
+.switchto-dialog {
+    background: #fff;
+    border-radius: 10px;
+    max-width: 92%;
+    width: 380px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial
+}
+
+.switchto-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 700;
+    color: #222
+}
+
+.switchto-body {
+    padding: 16px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.45
+}
+
+.switchto-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 12px;
+    border-top: 1px solid #f0f0f0;
+    gap: 8px
+}
+
+.switchto-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600
+}
+
+.switchto-btn.cancel {
+    background: #f3f4f6;
+    color: #111
+}
+
+.switchto-btn.confirm {
+    background: #f48fb1;
+    color: #fff
+}
+
+.switchto-noscroll {
+    overflow: hidden
+}
+
+@media (max-width:420px) {
+    .switchto-dialog {
+        width: 92%;
+    }
+}

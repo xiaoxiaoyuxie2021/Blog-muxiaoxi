@@ -130,8 +130,22 @@
                     <button class="tutorial-close" id="tutorialClose">了解</button>
                 </div>
             </div>
+            <!-- modal template for switch action (cloned into blank modal) -->
+            <template id="switchto-template">
+                <div class="modal-content" style="padding:16px;">
+                    <h3 style="margin:0 0 0.5rem;">主题</h3>
+                    <p>
+                        <button class="btn-switchto-choice" onclick=" location.href='home-simple.html'">简洁版</button>
+                    </p>
+                    <h3 style="margin:2rem 0 0.5rem;">语言</h3>
+                    <p>
+                        <button class="btn-switchto-choice" onclick=" location.href='home.html'">English</button>
+                    </p>
+                    </div>
+                </div>
+            </template>
         </div>
-        <button class="btn-switchto" onclick="location.href='home-simple.html'">
+        <button id="btnSwitchTo" class="btn-switchto">
             <span class="text-icon">
                 <i class="fas fa-exchange-alt"></i>
                 <span>切换</span>
@@ -141,6 +155,8 @@
     <script src="js/sakura-falling.js"></script>
     <script src="js/Lightbox.js"></script>
     <script src="js/dot.js"></script>
+    <script src="js/switchto.js"></script>
+
 </body>
 
 </html>
