@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="CSS/dot.css">
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/components.css">
+    <link rel="stylesheet" href="CSS/animations.css">
 </head>
 
 <body>
@@ -35,11 +36,12 @@
                 <p class="text-title-B">探索有趣的内容和最新的更新！</p>
                 <div class="text-icon-sm">
                     <span class="text-icon-sm-bili">
-                        <a href="https://space.bilibili.com/431028772" target="_blank"><i
-                                class="fab fa-bilibili"></i></a>
+                        <a href="https://space.bilibili.com/431028772" target="_blank" aria-label="哔哩哔哩">
+                            <i class="fab fa-bilibili" aria-hidden="true"></i></a>
                     </span>
                     <span class="text-icon-sm-dy">
-                        <a href=" https://v.douyin.com/QgUk6PP048g" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href=" https://v.douyin.com/QgUk6PP048g" target="_blank" aria-label="抖音">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i></a>
                     </span>
                     <span class="text-icon-sm-qq">
                         <i class="fab fa-qq" onclick="openLightbox('/IMAGES/mypic/qq-qrcode.jpg')"></i>
@@ -48,7 +50,8 @@
                         <i class="fas fa-comment-dots" onclick="openLightbox('/IMAGES/mypic/wx-qrcode.png')"></i>
                     </span>
                     <span class="text-icon-sm-git">
-                        <a href="https://github.com/xiaoxiaoyuxie2021" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/xiaoxiaoyuxie2021" target="_blank" aria-label="Github">
+                            <i class="fab fa-github" aria-hidden="true"></i></a>
                     </span>
                 </div>
             </div>
@@ -93,13 +96,15 @@
         <div class="floating-music-player" id="floatingMusicPlayer">
             <div class="music-player-container" id="musicPlayerContainer">
                 <div class="music-disc" id="musicDisc">
-                    <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面" class="music-cover" id="musicCover">
+                    <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面" class="music-cover"
+                        id="musicCover">
                     <div class="music-center-dot"></div>
                 </div>
                 <div class="expanded-player" id="expandedPlayer">
                     <div class="player-header">
                         <div class="player-cover">
-                            <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面" class="player-cover-img">
+                            <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面"
+                                class="player-cover-img">
                         </div>
                         <div class="player-info">
                             <div class="music-title" id="musicTitle">
@@ -142,21 +147,22 @@
                     <p>
                         <button class="btn-switchto-choice" onclick=" location.href='home.html'">English</button>
                     </p>
-                    </div>
                 </div>
-            </template>
         </div>
-        <button id="btnSwitchTo" class="btn-switchto">
-            <span class="text-icon">
-                <i class="fas fa-exchange-alt"></i>
-                <span>切换</span>
-            </span>
-        </button>
+        </template>
     </div>
-    <script src="js/sakura-falling.js"></script>
-    <script src="js/Lightbox.js"></script>
-    <script src="js/dot.js"></script>
-    <script src="js/switchto.js"></script>
+    <button id="btnSwitchTo" class="btn-switchto">
+        <span class="text-icon">
+            <i class="fas fa-exchange-alt"></i>
+            <span>切换</span>
+        </span>
+    </button>
+    </div>
+    <script defer src="js/sakura-falling.js"></script>
+    <script defer src="js/Lightbox.js"></script>
+    <script defer src="js/dot.js"></script>
+    <script defer src="js/switchto.js"></script>
+    <script defer src="js/animations.js"></script>
 
 </body>
 
