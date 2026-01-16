@@ -66,31 +66,58 @@
             const floating = document.getElementById('floatingMusicPlayer');
             let touchTimer = null;
             let isTouchDragging = false;
+            let readyToDragTouch = false;
             let startTouchX = 0, startTouchY = 0, origX = 0, origY = 0;
 
             function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
 
-            // touchstart: set timer for long-press
+            // Configurable thresholds
+            const LONG_PRESS_MS = 300;
+            const MOVE_THRESHOLD_PX = 10; // 8-12px recommended
+
+            // contextmenu preventer used only while actively dragging
+            let preventContext = null;
+
+            // touchstart: set timer for long-press (enter "ready to drag" state)
             musicDisc.addEventListener('touchstart', function(evt){
                 if (!floating) return;
                 const t = evt.touches[0];
                 startTouchX = t.clientX; startTouchY = t.clientY;
                 origX = floating.offsetLeft || 0; origY = floating.offsetTop || 0;
                 wasLongPress = false;
+                readyToDragTouch = false;
+                if (touchTimer) { clearTimeout(touchTimer); touchTimer = null; }
                 touchTimer = setTimeout(function(){
-                    isTouchDragging = true;
-                    wasLongPress = true;
-                    try { document.body.style.userSelect = 'none'; } catch(e){}
-                }, 300);
+                    // signal ready to drag, but don't yet prevent defaults
+                    readyToDragTouch = true;
+                }, LONG_PRESS_MS);
             }, { passive: true });
 
-            // touchmove: if dragging, move the floating element
+            // touchmove: if ready and movement exceeds threshold, start dragging
             document.addEventListener('touchmove', function(evt){
-                if (!isTouchDragging || !floating) return;
-                evt.preventDefault();
+                if (!floating) return;
                 const t = evt.touches[0];
                 const dx = t.clientX - startTouchX;
                 const dy = t.clientY - startTouchY;
+                const distSq = dx*dx + dy*dy;
+                if (!isTouchDragging) {
+                    if (readyToDragTouch && distSq >= MOVE_THRESHOLD_PX*MOVE_THRESHOLD_PX) {
+                        // start actual drag
+                        isTouchDragging = true;
+                        wasLongPress = true;
+                        // prevent default behaviors (selection/scroll/menu)
+                        evt.preventDefault();
+                        try { document.body.style.userSelect = 'none'; } catch(e){}
+                        // prevent contextmenu while dragging
+                        preventContext = function(ev){ ev.preventDefault(); };
+                        document.addEventListener('contextmenu', preventContext);
+                    } else {
+                        // not yet dragging: do nothing, allow browser menu if released
+                        return;
+                    }
+                }
+                // if dragging, move
+                evt.preventDefault();
                 const newX = origX + dx;
                 const newY = origY + dy;
                 floating.style.left = clamp(newX, 0, window.innerWidth - floating.offsetWidth) + 'px';
@@ -102,9 +129,11 @@
             // touchend/cancel: stop dragging and clear timer
             function endTouchDrag(){
                 if (touchTimer) { clearTimeout(touchTimer); touchTimer = null; }
+                readyToDragTouch = false;
                 if (isTouchDragging) {
                     isTouchDragging = false;
                     try { document.body.style.userSelect = ''; } catch(e){}
+                    if (preventContext) { document.removeEventListener('contextmenu', preventContext); preventContext = null; }
                 }
             }
             document.addEventListener('touchend', endTouchDrag);
@@ -113,6 +142,7 @@
             // --- Mouse long-press drag for desktop ---
             let mouseTimer = null;
             let isMouseDragging = false;
+            let readyToDragMouse = false;
             let startMouseX = 0, startMouseY = 0, origMouseX = 0, origMouseY = 0;
 
             musicDisc.addEventListener('mousedown', function(evt){
@@ -120,17 +150,33 @@
                 startMouseX = evt.clientX; startMouseY = evt.clientY;
                 origMouseX = floating.offsetLeft || 0; origMouseY = floating.offsetTop || 0;
                 wasLongPressMouse = false;
+                readyToDragMouse = false;
+                if (mouseTimer) { clearTimeout(mouseTimer); mouseTimer = null; }
                 mouseTimer = setTimeout(function(){
-                    isMouseDragging = true;
-                    wasLongPressMouse = true;
-                    try { document.body.style.userSelect = 'none'; } catch(e){}
-                }, 300);
+                    readyToDragMouse = true;
+                }, LONG_PRESS_MS);
             });
 
             document.addEventListener('mousemove', function(evt){
-                if (!isMouseDragging || !floating) return;
+                if (!floating) return;
                 const dx = evt.clientX - startMouseX;
                 const dy = evt.clientY - startMouseY;
+                const distSq = dx*dx + dy*dy;
+                if (!isMouseDragging) {
+                    if (readyToDragMouse && distSq >= MOVE_THRESHOLD_PX*MOVE_THRESHOLD_PX) {
+                        isMouseDragging = true;
+                        wasLongPressMouse = true;
+                        try { document.body.style.userSelect = 'none'; } catch(e){}
+                        // prevent contextmenu while dragging
+                        preventContext = function(ev){ ev.preventDefault(); };
+                        document.addEventListener('contextmenu', preventContext);
+                        // preventDefault the current move to stop text selection
+                        evt.preventDefault && evt.preventDefault();
+                    } else {
+                        return;
+                    }
+                }
+                // move while dragging
                 const newX = origMouseX + dx;
                 const newY = origMouseY + dy;
                 floating.style.left = clamp(newX, 0, window.innerWidth - floating.offsetWidth) + 'px';
@@ -141,9 +187,11 @@
 
             function endMouseDrag(){
                 if (mouseTimer) { clearTimeout(mouseTimer); mouseTimer = null; }
+                readyToDragMouse = false;
                 if (isMouseDragging) {
                     isMouseDragging = false;
                     try { document.body.style.userSelect = ''; } catch(e){}
+                    if (preventContext) { document.removeEventListener('contextmenu', preventContext); preventContext = null; }
                 }
             }
             document.addEventListener('mouseup', endMouseDrag);
