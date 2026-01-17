@@ -21,7 +21,7 @@
     border: none;
     box-shadow: 2px 2px 5px white;
     border-radius: 30px;
-    border:white solid 1px;
+    border: white solid 1px;
     height: 3rem;
     width: 7rem;
     display: inline-flex;
@@ -33,9 +33,9 @@
 }
 
 .btn-nav-home:hover {
-  background: rgba(255, 200, 221, 0.95);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 200, 221, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-switchto {
@@ -50,7 +50,7 @@
     background-color: rgba(255, 255, 255, 0);
     border: none;
     border-radius: 30px;
-    border:white solid 1px;
+    border: white solid 1px;
     height: 2rem;
     width: 6rem;
     display: inline-flex;
@@ -76,7 +76,7 @@
     background-color: rgba(255, 255, 255, 0);
     border: none;
     border-radius: 30px;
-    border:black solid 1px;
+    border: black solid 1px;
     height: 2rem;
     width: 6rem;
     display: inline-flex;
@@ -87,27 +87,47 @@
     margin-top: 1rem;
 }
 
-
-@media(max-width:768px){
-.btn-row{
-    gap:2.5rem;
-    display: grid;
-    grid-template-columns: repeat(2,minmax(6rem,10rem));
-    justify-items: center;
-
-}
-.btn-nav-home{
-    line-height: 1.3;
+.btn-friend-link {
+    font-family: 'Microsoft YaHei', 'Times New Roman';
     font-size: 1rem;
-    white-space: nowrap;
+    color: white;
+    line-height: 1.6;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: pink;
+    border: none;
+    box-shadow: 2px 2px 5px white;
+    border-radius: 30px;
+    border: white solid 1px;
+    height: 2.8rem;
+    width: 7.2rem;
+
 }
 
-.btn-switchto{
-    font-size: 0.8rem;
-    height: 2rem;
-    width: 5rem;
-    padding: 0.4rem 0.4rem;
-    right: 1.5rem;
-    top: 1.5rem;
-}
+
+@media(max-width:768px) {
+    .btn-row {
+        gap: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(6rem, 10rem));
+        justify-items: center;
+
+    }
+
+    .btn-nav-home {
+        line-height: 1.3;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .btn-switchto {
+        font-size: 0.8rem;
+        height: 2rem;
+        width: 5rem;
+        padding: 0.4rem 0.4rem;
+        right: 1.5rem;
+        top: 1.5rem;
+    }
 }

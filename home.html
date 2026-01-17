@@ -91,7 +91,8 @@
         <div class="inner-container-medium-group">
             <div class="inner-container-medium">
                 <div class="text-section-title">最新视频</div>
-                <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
+                <div
+                    style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
                     <iframe
                         src="https://player.bilibili.com/player.html?bvid=BV19CiEBaEUc&p=1&autoplay=false&danmaku=true&quality=1080p"
                         scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
@@ -112,81 +113,115 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <p class="text-footer">唯深衷之思，可越千载之隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2026 沐咲汐. 保留所有权利.</p>
-        </footer>
-        <audio id="bgMusic" loop preload="metadata">
-            <source src="/Resource/AUDIOS/bgm/青い森.mp3" type="audio/mpeg">
-        </audio>
-        <div class="floating-music-player" id="floatingMusicPlayer">
-            <div class="music-player-container" id="musicPlayerContainer">
-                <div class="music-disc" id="musicDisc">
-                    <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面" class="music-cover"
-                        id="musicCover">
-                    <div class="music-center-dot"></div>
+        <div class="inner-container-medium-but-larger-group">
+            <div class="inner-container-medium but-larger">
+                <div class="text-section-title">友情链接</div>
+                <div class="btn-row">
+                    <button class="btn-friend-link" onclick="window.open('#', '_blank')">
+                        <span class="text-icon">
+                            <i class="fas fa-link"></i>
+                            <span>示例1</span>
+                        </span>
+                    </button>
+                    <button class="btn-friend-link" onclick="window.open('#', '_blank')">
+                        <span class="text-icon">
+                            <i class="fas fa-link"></i>
+                            <span>示例2</span>
+                        </span>
+                    </button>
                 </div>
-                <div class="expanded-player" id="expandedPlayer">
-                    <div class="player-header">
-                        <div class="player-cover">
-                            <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面"
-                                class="player-cover-img">
-                        </div>
-                        <div class="player-info">
-                            <div class="music-title" id="musicTitle">
-                                <a href="https://dova-s.jp/bgm/play3515.html" target="_blank">青い森</a>
-                            </div>
-                            <div class="music-artist" id="musicArtist">しんさんわーくす</div>
-                        </div>
-                        <div class="player-controls">
-                            <button class="player-play" id="playerPlayBtn">
-                                <i class="fas fa-pause" id="playerPlayIcon"></i>
-                            </button>
-                            <button class="player-close" id="playerCloseBtn">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
+            </div>
+            <div class="inner-container-medium but-larger">
+                <div class="text-section-title">音乐推荐</div>
+                <div class="music-player-iframe-container">
+                    <div class="yunmusic-iframe-transform">
+                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
+                            src="https://music.163.com/outchain/player?type=2&id=2124462309&auto=1&height=66">
+                        </iframe>
                     </div>
-                    <div class="player-progress">
-                        <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100">
-                        <div class="time-info">
-                            <span id="currentTime">00:00</span>
-                            <span id="duration">00:00</span>
-                        </div>
+                    <div class="yunmusic-iframe-transform">
+                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
+                            src="https://music.163.com/outchain/player?type=2&id=1894065144&auto=1&height=66">
+                        </iframe>
                     </div>
                 </div>
             </div>
-            <div class="tutorial-tip" id="tutorialTip">
-                <div class="tutorial-content">
-                    <p>🌸 点击圆形音乐图标可展开播放器</p>
-                    <p>🎵 再次点击封面可收起播放器</p>
-                    <button class="tutorial-close" id="tutorialClose">了解</button>
-                </div>
-            </div>
-            <template id="switchto-template">
-                <div class="modal-content" style="padding:16px;">
-                    <h3 style="margin:0 0 0.5rem;">主题</h3>
-                    <p>
-                        <button class="btn-switchto-choice" onclick=" location.href='home-simple.html'">简洁版</button>
-                        <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
-                            data-theme-label-light="浅色版">深色版</button>
-                    </p>
-                    <h3 style="margin:2rem 0 0.5rem;">语言</h3>
-                    <p>
-                        <button class="btn-switchto-choice" onclick=" location.href='home.html#en'">English</button>
-                        <button class="btn-switchto-choice" onclick=" location.href='home.html#ja'">日本語</button>
-                        <button class="btn-switchto-choice"
-                            onclick=" location.href='home.html#zh-traditional'">繁體中文</button>
-                    </p>
-                </div>
         </div>
-        </template>
-    </div>
-    <button id="btnSwitchTo" class="btn-switchto">
-        <span class="text-icon">
-            <i class="fas fa-exchange-alt"></i>
-            <span>切换</span>
-        </span>
-    </button>
+            <footer>
+                <p class="text-footer">唯深衷之思，可越千载之隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2026 沐咲汐. 保留所有权利.</p>
+            </footer>
+            <audio id="bgMusic" loop preload="metadata">
+                <source src="/Resource/AUDIOS/bgm/青い森.mp3" type="audio/mpeg">
+            </audio>
+            <div class="floating-music-player" id="floatingMusicPlayer">
+                <div class="music-player-container" id="musicPlayerContainer">
+                    <div class="music-disc" id="musicDisc">
+                        <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面"
+                            class="music-cover" id="musicCover">
+                        <div class="music-center-dot"></div>
+                    </div>
+                    <div class="expanded-player" id="expandedPlayer">
+                        <div class="player-header">
+                            <div class="player-cover">
+                                <img src="/Resource/IMAGES/thumbnails/bgm-thumbnails/bgm-260116.jpg" alt="音乐封面"
+                                    class="player-cover-img">
+                            </div>
+                            <div class="player-info">
+                                <div class="music-title" id="musicTitle">
+                                    <a href="https://dova-s.jp/bgm/play3515.html" target="_blank">青い森</a>
+                                </div>
+                                <div class="music-artist" id="musicArtist">しんさんわーくす</div>
+                            </div>
+                            <div class="player-controls">
+                                <button class="player-play" id="playerPlayBtn">
+                                    <i class="fas fa-pause" id="playerPlayIcon"></i>
+                                </button>
+                                <button class="player-close" id="playerCloseBtn">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="player-progress">
+                            <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100">
+                            <div class="time-info">
+                                <span id="currentTime">00:00</span>
+                                <span id="duration">00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tutorial-tip" id="tutorialTip">
+                    <div class="tutorial-content">
+                        <p>🌸 点击圆形音乐图标可展开播放器</p>
+                        <p>🎵 再次点击封面可收起播放器</p>
+                        <button class="tutorial-close" id="tutorialClose">了解</button>
+                    </div>
+                </div>
+                <template id="switchto-template">
+                    <div class="modal-content" style="padding:16px;">
+                        <h3 style="margin:0 0 0.5rem;">主题</h3>
+                        <p>
+                            <button class="btn-switchto-choice" onclick=" location.href='home-simple.html'">简洁版</button>
+                            <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
+                                data-theme-label-light="浅色版">深色版</button>
+                        </p>
+                        <h3 style="margin:2rem 0 0.5rem;">语言</h3>
+                        <p>
+                            <button class="btn-switchto-choice" onclick=" location.href='home.html#en'">English</button>
+                            <button class="btn-switchto-choice" onclick=" location.href='home.html#ja'">日本語</button>
+                            <button class="btn-switchto-choice"
+                                onclick=" location.href='home.html#zh-traditional'">繁體中文</button>
+                        </p>
+                    </div>
+            </div>
+            </template>
+        </div>
+        <button id="btnSwitchTo" class="btn-switchto">
+            <span class="text-icon">
+                <i class="fas fa-exchange-alt"></i>
+                <span>切换</span>
+            </span>
+        </button>
     </div>
     <script defer src="js/sakura-falling.js"></script>
     <script defer src="js/darkmode.js"></script>
