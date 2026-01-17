@@ -23,19 +23,37 @@
 
 
 .inner-container-medium {
-  margin: 1rem;
+  margin: 1rem 0 1rem 1rem;
   padding: 1rem;
   background-color: rgba(255, 255, 255, .25);
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
   backdrop-filter: blur(3px);
-  width: 30%;
+  width: 28%;
 }
 
+.inner-container-medium-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 
 @media(max-width:768px){
 .inner-container{
   padding: 2.5rem;
 
 }
+
+.inner-container-medium {
+  width: 15.5rem;
+  margin: 1rem 0 2rem 1rem;
+}
+
+.inner-container-medium-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
 }
