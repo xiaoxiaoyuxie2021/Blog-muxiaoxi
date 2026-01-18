@@ -21,3 +21,9 @@
     src: url(/Resource/FONTS/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.woff2);
 
 }
+
+@font-face {
+    font-family: 'Kosugi Maru Regular';
+    src: url(/Resource/FONTS/Kosugi_Maru/KosugiMaru-Regular.woff2);
+    font-weight: normal;
+}

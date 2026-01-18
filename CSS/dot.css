@@ -100,6 +100,7 @@
 }
 
 .music-title {
+  font-family: 'Kosugi Maru Regular', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   color: #333;
@@ -110,6 +111,7 @@
 }
 
 .music-artist {
+  font-family: 'Kosugi Maru Regular', sans-serif;
   font-size: 0.75rem;
   color: #666;
   white-space: nowrap;

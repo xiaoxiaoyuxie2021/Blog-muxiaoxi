@@ -102,8 +102,8 @@
     box-shadow: 2px 2px 5px white;
     border-radius: 30px;
     border: white solid 1px;
-    height: 2.8rem;
-    width: 7.2rem;
+    height: 3rem;
+    width: 7.9rem;
 
 }
 
@@ -129,5 +129,10 @@
         padding: 0.4rem 0.4rem;
         right: 1.5rem;
         top: 1.5rem;
+    }
+
+    .btn-friend-link {
+        height: 2.8rem;
+        width: 7.2rem;
     }
 }
