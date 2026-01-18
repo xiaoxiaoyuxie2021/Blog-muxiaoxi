@@ -7,7 +7,7 @@
 }
 
 .text-title-A {
-    font-family: 'Microsoft YaHei', "Times New Roman";
+    font-family: 'Noto Sans SC Bold', "Times New Roman";
     font-size: 2.1rem;
     color: #ffc0cb;
     font-weight: bold;
@@ -18,7 +18,7 @@
 
 
 .text-title-B {
-    font-family: 'Microsoft YaHei', "Times New Roman";
+    font-family: 'Noto Sans SC Regular', "Times New Roman";
     font-size: 1rem;
     color: white;
     font-weight: thin;
@@ -36,15 +36,16 @@
 }
 
 .text-section-title {
-    font-family: 'Microsoft YaHei', "Times New Roman";
-    font-size: 1.2rem;
-    color: white;
-    font-weight: bold;
+    font-family: 'ZCOOL KuaiLe Regular', "Times New Roman";
+    font-size: 1.8rem;
+    font-weight: light;
+    color: #ffc0cb;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     margin: 0 0 1rem 0;
-    letter-spacing: 0.06rem;
+    letter-spacing: 0.1rem;
     text-align: center;
     align-items: center;
-    -webkit-text-stroke: 1.2px pink;
 }
 
 .text-footer {
@@ -58,6 +59,16 @@
 }
 
 .text-icon {
+    font-family: 'ZCOOL KuaiLe Regular', "Times New Roman";
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.text-icon-switchto {
+    font-family: 'ZCOOL KuaiLe Regular', "Times New Roman";
+    font-size: 1.1rem;
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
@@ -96,6 +107,7 @@
 
 @media(max-width:768px) {
     .text-title-A {
+        font-family: 'Noto Sans SC Bold', "Times New Roman";
         margin: 5.6rem -1.2rem 1.2rem -1.2rem;
         font-size: 1.7rem;
         white-space: normal;
@@ -104,9 +116,14 @@
     }
 
     .text-title-B {
+        font-family: 'Noto Sans SC Regular', "Times New Roman";
         margin: 1.2rem -5rem 0 -4rem;
         text-align: center;
 
+    }
+
+    .text-icon-switchto {
+        font-size: 1rem;
     }
 
     .text-icon-sm {
@@ -114,4 +131,8 @@
         text-align: center;
 
     }
+    .text-section-title {
+        font-size: 1.4rem;
+    }
+
 }

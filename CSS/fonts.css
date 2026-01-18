@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Noto Sans SC Regular';
+    src: url(/Resource/FONTS/Noto_Sans_SC/static/NotoSansSC-Regular.woff2);
+
+}
+
+@font-face {
+    font-family: 'Noto Sans SC Bold';
+    src: url(/Resource/FONTS/Noto_Sans_SC/static/NotoSansSC-Bold.woff2);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Noto Sans SC Light';
+    src: url(/Resource/FONTS/Noto_Sans_SC/static/NotoSansSC-Light.woff2);
+    font-weight: light;
+}
+
+@font-face {
+    font-family: 'ZCOOL KuaiLe Regular';
+    src: url(/Resource/FONTS/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.woff2);
+
+}
