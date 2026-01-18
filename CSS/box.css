@@ -1,0 +1,37 @@
+.comment-box {
+    width: 80%;
+    min-height: 1rem;
+    padding: 10px;
+    border-radius: 32px;
+    border: 1px solid #ccc;
+    resize: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding-left: 1.4rem;
+    overflow: hidden;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 1rem;
+    background-color: white;
+    word-break: break-all;
+    white-space: pre-wrap;
+
+}
+
+.comment-box:focus {
+    outline: none;
+    border-color: pink;
+    box-shadow: 0 0 8px pink;
+}
+
+.comment-box:empty::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    pointer-events: none;
+}
+
+@media(max-width:768px){
+.comment-box {
+    min-height: 0.2rem;
+    font-size: 0.8rem;
+    width: 80%;
+}
+}

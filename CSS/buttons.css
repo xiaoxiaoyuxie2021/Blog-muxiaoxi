@@ -107,6 +107,35 @@
 
 }
 
+.btn-submit {
+    font-family: 'ZCOOL KuaiLe Regular', "Times New Roman";
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: pink;
+    border: none;
+    box-shadow: 2px 2px 5px white;
+    border-radius: 30px;
+    border: white solid 1px;
+    height: 3rem;
+    width: 7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.4s ease;
+
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 @media(max-width:768px) {
     .btn-row {
@@ -134,5 +163,10 @@
     .btn-friend-link {
         height: 2.8rem;
         width: 7.2rem;
+    }
+    .btn-submit {
+        height: 2.3rem;
+        width: 5rem;
+        font-size: 1rem;
     }
 }
