@@ -47,7 +47,7 @@
 
 /* ========== 4. 网站运行时间 ========== */
 (function(){
-  const START = new Date('2026-01-11T00:00:00'); // 改这里
+  const START = new Date('2026-01-10T15:17:00'); 
   const el = document.getElementById('siteRuntime');
   function calc() {
     const dur = Date.now() - START;
