@@ -21,21 +21,12 @@ footer {
   color: #fff;
 }
 
-button,
-a,
-input,
-select,
-textarea,
-[tabindex] {
-  outline: none;
+*{
+-webkit-tap-highlight-color:transparent !important;
 
 }
 
-:focus:not(:focus-visible) {
-  outline: none;
-}
+*::-moz-focus-inner {
+  border: 0 !important;
 
-:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 2px;
 }

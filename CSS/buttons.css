@@ -64,6 +64,11 @@
 
 }
 
+.btn-switchto:hover {
+    background: rgba(255, 200, 221, 0.95);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
 .btn-switchto-choice {
     font-family: 'Microsoft YaHei', "Times New Roman";
     font-size: 0.9rem;
