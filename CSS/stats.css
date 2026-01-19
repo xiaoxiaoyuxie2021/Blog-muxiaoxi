@@ -1,0 +1,24 @@
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stats-icon {
+  color: #f48fb1;
+  font-size: 18px;
+
+}
+
+.stats-label {
+  font-family: 'Noto Sans SC Bold', sans-serif;
+  font-size: 13px;
+  color: black;
+}
+
+.stats-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f48fb1;
+}
