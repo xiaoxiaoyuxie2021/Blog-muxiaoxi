@@ -1,9 +1,7 @@
 .glass {
   position: fixed;
   inset: 1rem;
-  background: rgba(255, 255, 255, .2);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
   display: flex;
   flex-direction: column;
   overflow: visible;
@@ -15,7 +13,7 @@
 .inner-container {
   margin: 1.2rem;
   padding: 1.2rem;
-  background-color: rgba(255, 255, 255, .25);
+  background-color: #f5f5f5;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
   backdrop-filter: blur(3px);
@@ -25,7 +23,7 @@
 .inner-container-medium {
   margin: 1rem 0 1rem 1rem;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, .25);
+  background-color: #f5f5f5;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
   backdrop-filter: blur(3px);
@@ -88,14 +86,13 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: #f5f5f5;
   border-radius: 12px;
   padding: 12px 30px;
-  max-width: 20rem;
-  margin: 2rem 0 2rem 25rem;
+  max-width: 26rem;
+  margin: 2rem 0 2rem 24rem;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
-  backdrop-filter: blur(3px);
 
 }
 
@@ -167,7 +164,7 @@
   margin: 0 auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  width: 13.6rem;
+  width: 16rem;
 }
 
 }

@@ -20,7 +20,7 @@
 .text-title-B {
     font-family: 'Noto Sans SC Regular', "Times New Roman";
     font-size: 1rem;
-    color: white;
+    color: black;
     font-weight: thin;
     margin: -0.3rem 0 1.2rem 1.2rem;
     letter-spacing: 0.06rem;
@@ -40,7 +40,6 @@
     font-size: 1.8rem;
     font-weight: light;
     color: #ffc0cb;
-    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 0 0 1rem 0;
     letter-spacing: 0.1rem;
@@ -51,7 +50,7 @@
 .text-footer {
     font-family: 'Microsoft YaHei', "Times New Roman";
     font-size: 0.7rem;
-    color: white;
+    color: black;
     line-height: 1.6;
     margin: 0.6rem 0 0.6rem 0.6rem;
     display: flex;
@@ -90,7 +89,7 @@
 
 .text-icon-sm-git {
     font-size: 1.6rem;
-    color: white;
+    color: black;
 }
 
 .text-icon-sm-qq {

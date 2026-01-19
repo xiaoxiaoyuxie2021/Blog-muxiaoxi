@@ -5,7 +5,7 @@ a{
 
 body {
   background-color: linear-gradient(135deg, #667eea 0% #764ba2 100%);
-  background-image: url("/Resource/IMAGES/background/sakura-unsplash_compressed.jpg");
+  background-image: url("/Resource/IMAGES/background/sakura2-unsplash_compressed.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -14,11 +14,10 @@ body {
 footer {
   margin-top: auto;
   padding: 0.6rem 1.2rem;
-  background-color: rgba(255, 255, 255, .25);
+  background-color: #f5f5f5;
   backdrop-filter: blur(3px);
   text-align: center;
   font-size: 1rem;
-  color: #fff;
 }
 
 *{
