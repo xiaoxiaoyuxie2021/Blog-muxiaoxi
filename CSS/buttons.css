@@ -140,3 +140,40 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
+
+.btn-backtotop {
+    font-family: 'Microsoft YaHei', "Times New Roman";
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: pink;
+    box-shadow: 2px 2px 5px white;
+    border-radius: 14px;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    visibility: hidden;
+    transition: all 0.4s ease;
+
+}
+
+.btn-backtotop:hover {
+    background: rgba(255, 200, 221, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-backtotop-show {
+    visibility: visible;
+    opacity: 1;
+    animation: bounceInUp 0.5s ease forwards;
+}

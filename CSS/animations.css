@@ -53,6 +53,27 @@
 	}
 }
 
+@keyframes bounceInUp {
+	0% {
+		transform: translateY(20px) scale(0.8);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(-5px) scale(1.05);
+		opacity: 1;
+	}
+
+	70% {
+		transform: translateY(2px) scale(0.95);
+	}
+
+	100% {
+		transform: translateY(0) scale(1);
+        opacity: 1;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.inner-container {
 		animation: none !important;

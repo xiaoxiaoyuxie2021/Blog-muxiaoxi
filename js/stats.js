@@ -59,32 +59,73 @@
   setInterval(calc, 1000);
 })();
 
-/* ========== 4. 春节倒计时 ========== */
-  const box = document.getElementById('countdown');
-    const target = new Date(box.dataset.target).getTime(); 
+/* ========== 4. 节假日倒计时 ========== */
+// 2026年法定节假日数据
+const holidays = [
+  { name: "元旦", date: "2026-01-01" },
+  { name: "春节", date: "2026-02-17" },
+  { name: "清明节", date: "2026-04-05" },
+  { name: "劳动节", date: "2026-05-01" },
+  { name: "端午节", date: "2026-06-19" },
+  { name: "中秋节", date: "2026-09-26" },
+  { name: "国庆节", date: "2026-10-01" }
+];
 
-    function pad(n) { return n < 10 ? '0' + n : n; }
+// 计算下一个节假日
+function getNextHoliday() {
+  const now = new Date();
+  const futureHolidays = holidays.filter(holiday => {
+    const [y, m, d] = holiday.date.split('-').map(Number);
+    const holidayDate = new Date(y, m - 1, d);
+    return holidayDate >= now;
+  });
 
-    function tick() {
-      const remain = target - Date.now();
+  if (futureHolidays.length === 0) {
+    const nextYear = now.getFullYear() + 1;
+    return { name: `${nextYear}年元旦`, date: `${nextYear}-01-01` };
+  }
 
-      if (remain <= 0) {           
-        box.innerHTML = '活动已开始！';
-        return;
-      }
+  futureHolidays.sort((a, b) => {
+    const [y1, m1, d1] = a.date.split('-').map(Number);
+    const [y2, m2, d2] = b.date.split('-').map(Number);
+    return new Date(y1, m1 - 1, d1) - new Date(y2, m2 - 1, d2);
+  });
 
-      const days  = Math.floor(remain / 864e5);
-      const hours = Math.floor(remain % 864e5 / 36e5);
-      const mins  = Math.floor(remain % 36e5 / 6e4);
-      const secs  = Math.floor(remain % 6e4 / 1e3);
+  // 核心修改：动态拼接年份
+  const targetHoliday = futureHolidays[0];
+  const holidayYear = targetHoliday.date.split('-')[0];
+  return { 
+    name: `${holidayYear}年${targetHoliday.name}`, 
+    date: targetHoliday.date 
+  };
+}
 
-      box.innerHTML =
-        `<span>${days}</span>天` +
-        `<br><span>${pad(hours)}</span>时` +
-        `<span>${pad(mins)}</span>分` +
-        `<span>${pad(secs)}</span>秒`;
+// 格式化倒计时
+function formatCountdown(targetDate) {
+  const now = new Date();
+  const diff = targetDate - now;
+  if (diff <= 0) return "今天就是节假日啦！🎉";
 
-      requestAnimationFrame(tick);   
-    }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    tick(); 
+  return `${days}天${hours}时${minutes}分${seconds}秒`;
+}
+
+// 更新页面显示
+function updateHolidayCountdown() {
+  const nextHoliday = getNextHoliday();
+  const targetDate = new Date(nextHoliday.date);
+  const countdown = formatCountdown(targetDate);
+  
+  document.getElementById('holidayName').textContent = nextHoliday.name;
+  document.getElementById('countdownNumbers').textContent = countdown;
+}
+
+// 初始化 + 每秒更新
+updateHolidayCountdown();
+setInterval(updateHolidayCountdown, 1000);
+
+
