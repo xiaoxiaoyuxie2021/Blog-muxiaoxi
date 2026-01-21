@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1920, initial-scale=1.0, minimum-scale=0.1, maximum-scale=5.0, user-scalable=no">
     <title>首页 - 沐咲汐的博客</title>
     <meta name="description" content="沐咲汐的个人博客，分享二次元与日常，欢迎各位来访哦~">
     <meta name="keywords" content="沐咲汐,二次元,博客,日常分享">
@@ -37,7 +37,7 @@
         <div class="inner-container">
             <div>
                 <div class="text-title-A">欢迎来到沐咲汐的博客</div>
-                <p class="text-title-B">探索有趣的内容和最新的更新(*´∀ ˋ*)</p>
+                <p class="text-title-B">探索有趣的内容和最新的更新</p>
                 <div class="text-icon-sm">
                     <span class="text-icon-sm-bili">
                         <a href="https://space.bilibili.com/431028772" target="_blank" aria-label="哔哩哔哩">
@@ -94,13 +94,15 @@
         <div class="inner-container-medium-group">
             <div class="inner-container-medium">
                 <div class="text-section-title">最新视频</div>
-                <div
-                    style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
-                    <iframe
-                        src="https://player.bilibili.com/player.html?bvid=BV19CiEBaEUc&p=1&autoplay=false&danmaku=true&quality=1080p"
-                        scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
-                        style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    </iframe>
+                <div class="carousel">
+                    <div
+                        style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
+                        <iframe
+                            src="https://player.bilibili.com/player.html?bvid=BV19CiEBaEUc&p=1&autoplay=false&danmaku=true&quality=1080p"
+                            scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        </iframe>
+                    </div>
                 </div>
             </div>
             <div class="inner-container-medium">
@@ -173,13 +175,18 @@
             </div>
             <div class="stats-item">
                 <i class="fas fa-clock stats-icon"></i>
-                <span class="stats-label">网站上线时长</span>
+                <span class="stats-label">网站已运行</span>
                 <span class="stats-value" id="siteRuntime"></span>
             </div>
             <div class="stats-item">
                 <i class="fas fa-calendar-alt stats-icon"></i>
-                <span class="stats-label">当前时间</span>
+                <span class="stats-label">当前时间(UTC+8)</span>
                 <span class="stats-value" id="beijingTime"></span>
+            </div>
+            <div class="stats-item">
+                <i class="fas fa-hourglass-half stats-icon"></i>
+                <span class="stats-label">距离2026年春节</span>
+                <span class="stats-value" id="countdown" data-target="2026-02-17T00:00:00">计算中...</span>
             </div>
         </div>
         <footer>
@@ -267,6 +274,7 @@
     <script defer src="js/switchto.js"></script>
     <script defer src="js/animations.js"></script>
     <script defer src="js/stats.js"></script>
+    <script defer src="js/function.js"></script>
 
 </body>
 

@@ -266,9 +266,3 @@
   display: none;
 }
 
-@media(max-width:404px) {
-.expanded-player {
-  width: 16rem;
-  height: 6rem;
-}
-}

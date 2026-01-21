@@ -84,7 +84,7 @@
 
 .text-icon-sm-dy {
     font-size: 1.6rem;
-    color: #fe2c55
+    color: #fe2c55;
 }
 
 .text-icon-sm-git {
@@ -104,34 +104,3 @@
     cursor: pointer;
 }
 
-@media(max-width:768px) {
-    .text-title-A {
-        font-family: 'Noto Sans SC Bold', "Times New Roman";
-        margin: 5.6rem -1.2rem 1.2rem -1.2rem;
-        font-size: 1.7rem;
-        white-space: normal;
-        word-break: break-word;
-        text-align: center;
-    }
-
-    .text-title-B {
-        font-family: 'Noto Sans SC Regular', "Times New Roman";
-        margin: 1.2rem -5rem 0 -4rem;
-        text-align: center;
-
-    }
-
-    .text-icon-switchto {
-        font-size: 1rem;
-    }
-
-    .text-icon-sm {
-        padding: 0.9rem 0 0 0;
-        text-align: center;
-
-    }
-    .text-section-title {
-        font-size: 1.4rem;
-    }
-
-}

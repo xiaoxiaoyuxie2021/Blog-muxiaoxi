@@ -28,10 +28,3 @@
     pointer-events: none;
 }
 
-@media(max-width:768px){
-.comment-box {
-    min-height: 0.2rem;
-    font-size: 0.8rem;
-    width: 80%;
-}
-}

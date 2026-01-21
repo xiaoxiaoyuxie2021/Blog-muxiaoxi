@@ -12,38 +12,3 @@
     object-fit: cover;
 }
 
-@media(max-width:404px) {
-    .my-info {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 0.9rem;
-    }
-
-    .avatar-large {
-        margin: 0 auto;
-        width: 6.2rem;
-        height: 6.2rem;
-        margin-top: 1rem;
-        position: relative;
-        top: -10.3rem;
-    }
-}
-
-@media(min-width:404px) and (max-width:768px) {
-    .my-info {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 0.9rem;
-    }
-
-    .avatar-large {
-        margin: 0 auto;
-        width: 6.2rem;
-        height: 6.2rem;
-        margin-top: 1rem;
-        position: relative;
-        top: -8rem;
-    }
-}

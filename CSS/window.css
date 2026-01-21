@@ -62,8 +62,3 @@
     overflow: hidden
 }
 
-@media (max-width:420px) {
-    .switchto-dialog {
-        width: 92%;
-    }
-}

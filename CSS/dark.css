@@ -63,41 +63,7 @@ html[data-theme="dark"] .text-icon-sm-git { color: white; }
 html[data-theme="dark"] .text-icon-sm-qq { color: white; }
 html[data-theme="dark"] .text-icon-sm-wx { color: white; }
 
-@media (max-width:768px){
-  html[data-theme="dark"] .text-title-A,
-  html[data-theme="dark"] .text-title-B { text-shadow: none; }
-}
 
-html[data-theme="dark"] .switchto-overlay {
-  background: rgba(0,0,0,0.45) !important;
-}
-
-html[data-theme="dark"] .switchto-dialog {
-  background: rgba(0,0,0,0.25) !important;
-  color: white !important;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25) !important;
-  border: white solid 1px !important;
-}
-
-html[data-theme="dark"] .switchto-dialog .modal-content,
-html[data-theme="dark"] .switchto-dialog h3,
-html[data-theme="dark"] .switchto-dialog p {
-  color: inherit !important;
-}
-
-html[data-theme="dark"] .switchto-dialog .btn-switchto-choice {
-  color: white !important;
-  border: 1px solid white !important;
-  background: grey !important;
-  border-radius: 16px !important;
-  padding: 0.45rem 0.8rem !important;
-  transition: background .18s ease, box-shadow .18s ease, transform .12s ease;
-}
-
-html[data-theme="dark"] .switchto-dialog .btn-switchto-choice:hover{
-  background: #f4f6f8 !important;
-  transform: translateY(-1px) !important;
-}
 
 
 
