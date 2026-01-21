@@ -4,8 +4,7 @@
   const scale = screen.width / pcWidth;    
   const meta = document.querySelector('meta[name=viewport]');
   if (meta) {
-    // 使用 device-width 以保留系统原生缩放行为，JS 将负责把页面按 1920 逻辑画布缩放到视口
-    meta.setAttribute('content', `width=device-width,initial-scale=1,user-scalable=yes`);
+    meta.setAttribute('content', `width=1920,initial-scale=1,user-scalable=yes`);
   }
 })();
 
