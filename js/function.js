@@ -4,8 +4,8 @@
   const scale = screen.width / pcWidth;    
   const meta = document.querySelector('meta[name=viewport]');
   if (meta) {
-    meta.setAttribute('content',
-      `width=${pcWidth},initial-scale=${scale},minimum-scale=${scale},maximum-scale=${scale},user-scalable=no`);
+    // 使用 device-width 以保留系统原生缩放行为，JS 将负责把页面按 1920 逻辑画布缩放到视口
+    meta.setAttribute('content', `width=device-width,initial-scale=1,user-scalable=yes`);
   }
 })();
 
@@ -39,3 +39,41 @@ if (btnBackToTop) {
     }
   });
 }
+
+/* 按 1920 画布宽度缩放 .glass 容器（保持内部坐标为 1920，不改变布局） */
+(function(){
+  const DESKTOP_WIDTH = 1920;
+  let resizeTimer = null;
+
+  function applyDesktopScale(){
+    const container = document.querySelector('.glass');
+    if (!container) return;
+
+    // 确保容器基准宽度为 1920px
+    container.style.width = DESKTOP_WIDTH + 'px';
+    container.style.transformOrigin = '0 0';
+
+    // 计算缩放比：视口宽度 / 1920
+    const viewportW = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const scale = viewportW / DESKTOP_WIDTH;
+
+    // 应用缩放（允许放大或缩小），视觉上保持与桌面相同的逻辑画布尺寸
+    container.style.transform = `scale(${scale})`;
+
+    // 修正文档高度以配合 transform 缩放后的可滚动区域
+    // 先清除可能的 inline height 再测量真实高度
+    container.style.height = '';
+    const contentHeight = container.getBoundingClientRect().height;
+    const scaledHeight = contentHeight * scale;
+    document.documentElement.style.height = scaledHeight + 'px';
+    document.body.style.height = scaledHeight + 'px';
+  }
+
+  // 首次加载与窗口尺寸变化时应用，使用防抖减少重排
+  window.addEventListener('load', applyDesktopScale);
+  window.addEventListener('orientationchange', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(applyDesktopScale, 120); });
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(applyDesktopScale, 80); });
+
+  // 如果需要，也可以暴露函数供调试使用：window.applyDesktopScale()
+  window.applyDesktopScale = applyDesktopScale;
+})();
