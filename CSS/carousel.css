@@ -1,0 +1,66 @@
+.container-carousel {
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: white;
+
+}
+
+.carousel-list {
+    position: relative;
+    left: 0;
+    display: flex;
+    transition: left 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.btn-carousel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: pink;
+    border: none;
+    color: #fff;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 99;
+    text-align: center;
+    border-radius: 10px;
+    height: 2rem;
+    width: 2rem;
+
+}
+
+.carousel-item.item1 {
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.carousel-item.item2 {
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+
+.prev {
+    left: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+.next {
+    right: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+

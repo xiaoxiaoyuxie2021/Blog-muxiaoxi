@@ -26,13 +26,14 @@
     <link rel="stylesheet" href="CSS/fonts.css">
     <link rel="stylesheet" href="CSS/box.css">
     <link rel="stylesheet" href="CSS/stats.css">
+    <link rel="stylesheet" href="CSS/carousel.css">
 </head>
 
 <body>
     <canvas class="sakura" id="sakura"></canvas>
     <div class="glass">
         <div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display: none">
-            <img id="lightbox-img" src="" alt="图片">
+            <img id="lightbox-img" src="" alt="图片">   
         </div>
         <div class="inner-container">
             <div>
@@ -94,14 +95,12 @@
         <div class="inner-container-medium-group">
             <div class="inner-container-medium">
                 <div class="text-section-title">最新视频</div>
-                    <div
-                        style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
-                        <iframe
-                            src="https://player.bilibili.com/player.html?bvid=BV19CiEBaEUc&p=1&autoplay=false&danmaku=true&quality=1080p"
-                            scrolling="no" frameborder="no" framespacing="0" allowfullscreen="true"
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        </iframe>
+                <div class="container-carousel" id="carousel">
+                    <button class="btn-carousel prev" id="prevBtn">&lt;</button>
+                    <button class="btn-carousel next" id="nextBtn">&gt;</button>
+                    <div class="carousel-list" id="carouselList">
                     </div>
+                </div>
             </div>
             <div class="inner-container-medium">
                 <div class="text-section-title">最新图片</div>
@@ -136,16 +135,17 @@
             </div>
             <div class="inner-container-medium but-larger">
                 <div class="text-section-title">音乐推荐</div>
-                <div class="music-player-iframe-container">
-                    <div class="yunmusic-iframe-transform">
-                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
-                            src="https://music.163.com/outchain/player?type=2&id=2124462309&auto=1&height=66">
-                        </iframe>
-                    </div>
-                    <div class="yunmusic-iframe-transform">
-                        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
-                            src="https://music.163.com/outchain/player?type=2&id=1894065144&auto=1&height=66">
-                        </iframe>
+                <div class="container-carousel" id="carousel">
+                    <button class="btn-carousel prev" id="prevBtn">&lt;</button>
+                    <button class="btn-carousel next" id="nextBtn">&gt;</button>
+                    <div class="carousel-list" id="carouselList">
+                        <div class="music-player-iframe-container">
+                            <div class="yunmusic-iframe-transform">
+                                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
+                                    src="https://music.163.com/outchain/player?type=2&id=2124462309&auto=1&height=66">
+                                </iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -250,10 +250,10 @@
                     </p>
                     <h3 style="margin:2rem 0 0.5rem;">语言</h3>
                     <p>
-                        <button class="btn-switchto-choice" onclick=" location.href='home.html#en'">English</button>
-                        <button class="btn-switchto-choice" onclick=" location.href='home.html#ja'">日本語</button>
+                        <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
+                        <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
                         <button class="btn-switchto-choice"
-                            onclick=" location.href='home.html#zh-traditional'">繁體中文</button>
+                            onclick=" location.href='/home#zh-tr'">繁體中文</button>
                     </p>
                 </div>
         </div>
@@ -277,6 +277,8 @@
     <script defer src="js/animations.js"></script>
     <script defer src="js/stats.js"></script>
     <script defer src="js/function.js"></script>
+    <script defer src="js/data.js"></script>
+    <script defer src="js/carousel.js"></script>
 
 </body>
 

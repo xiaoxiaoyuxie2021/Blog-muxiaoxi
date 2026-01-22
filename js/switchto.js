@@ -1,3 +1,4 @@
+/*切换主题弹窗逻辑*/
 (function () {
     const tpl = document.getElementById('switchto-template');
     const btn = document.getElementById('btnSwitchTo');
@@ -65,3 +66,5 @@
         const s = document.createElement('style'); s.id = 'switchto-styles'; s.textContent = css; document.head.appendChild(s);
     }
 })();
+/*卡片切换逻辑*/
+
