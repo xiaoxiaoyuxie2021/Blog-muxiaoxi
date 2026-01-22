@@ -11,14 +11,22 @@ html[data-theme="dark"] .glass{
 }
 
 html[data-theme="dark"] footer{
-  color: #c8d7ea;
+  background-color: rgba(255,255,255,0.4);
+}
+
+html[data-theme="dark"] .inner-container{
+  background-color: rgba(255,255,255,0.4);
+}
+
+html[data-theme="dark"] .inner-container-medium{
+  background-color: rgba(255,255,255,0.4);
 }
 
 html[data-theme="dark"] .text,
 html[data-theme="dark"] .text-body,
 html[data-theme="dark"] .text-footer,
 html[data-theme="dark"] .text-title-B{
-  color: #dbe8ff;
+  color: white;
 }
 
 html[data-theme="dark"] .text-title-A{
@@ -26,7 +34,7 @@ html[data-theme="dark"] .text-title-A{
 }
 
 html[data-theme="dark"] .btn-nav-home{
-  color: #e6eef6;
+  color: white;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
   background: rgba(255,255,255,0.02);
@@ -37,10 +45,15 @@ html[data-theme="dark"] .btn-nav-home:hover{
   box-shadow: 0 6px 14px rgba(0,0,0,0.5);
 }
 
-html[data-theme="dark"] .btn-switchto,
-html[data-theme="dark"] .btn-switchto-choice{
-  color: #e6eef6;
+html[data-theme="dark"] .btn-switchto {
+  color: white;
   border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+}
+
+html[data-theme="dark"] .btn-switchto-choice{
+  color: black;
+  border: 1px solid black;
   background: transparent;
 }
 
@@ -52,9 +65,17 @@ html[data-theme="dark"] .lightbox{
   background: rgba(0,0,0,0.95);
 }
 
-html[data-theme="dark"] .music-player-container,
+html[data-theme="dark"] .music-player-container
 html[data-theme="dark"] .music-disc{
   background: transparent;
+}
+
+html[data-theme="dark"] .container-stats{
+  background-color: rgba(255,255,255,0.4);
+}
+
+html[data-theme="dark"] .stats-label{
+  color: white;
 }
 
 html[data-theme="dark"] .text-icon-sm-bili { color: white; }

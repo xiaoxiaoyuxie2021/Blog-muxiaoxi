@@ -135,10 +135,10 @@
             </div>
             <div class="inner-container-medium but-larger">
                 <div class="text-section-title">音乐推荐</div>
-                <div class="container-carousel" id="carousel">
-                    <button class="btn-carousel prev" id="prevBtn">&lt;</button>
-                    <button class="btn-carousel next" id="nextBtn">&gt;</button>
-                    <div class="carousel-list" id="carouselList">
+                <div class="container-carousel" id="musicCarousel">
+                    <button class="btn-carousel prev" id="musicPrevBtn">&lt;</button>
+                    <button class="btn-carousel next" id="musicNextBtn">&gt;</button>
+                    <div class="carousel-list" id="musicCarouselList">
                         <div class="music-player-iframe-container">
                             <div class="yunmusic-iframe-transform">
                                 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
@@ -242,13 +242,13 @@
             </div>
             <template id="switchto-template">
                 <div class="modal-content" style="padding:16px;">
-                    <h3 style="margin:0 0 0.5rem;">主题</h3>
+                    <h3 style="margin:0 0 0.5rem;color: black;">主题</h3>
                     <p>
                         <button class="btn-switchto-choice" onclick=" location.href='/home-simple'">简洁版</button>
                         <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
                             data-theme-label-light="浅色版">深色版</button>
                     </p>
-                    <h3 style="margin:2rem 0 0.5rem;">语言</h3>
+                    <h3 style="margin:2rem 0 0.5rem;color: black;">语言</h3>
                     <p>
                         <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
                         <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
