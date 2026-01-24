@@ -33,12 +33,18 @@
     <canvas class="sakura" id="sakura"></canvas>
     <div class="glass">
         <div id="lightbox" class="lightbox" onclick="closeLightbox()" style="display: none">
-            <img id="lightbox-img" src="" alt="图片">   
+            <img id="lightbox-img" src="" alt="图片">
         </div>
         <div class="inner-container">
             <div>
                 <div class="text-title-A">欢迎来到沐咲汐的博客</div>
                 <p class="text-title-B">探索有趣的内容和最新的更新</p>
+                <button id="btnSwitchTo" class="btn-switchto" style="margin-top: -1rem;margin-right: -1rem;">
+                    <span class="text-icon-switchto">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>切换</span>
+                    </span>
+                </button>
                 <div class="text-icon-sm">
                     <span class="text-icon-sm-bili">
                         <a href="https://space.bilibili.com/431028772" target="_blank" aria-label="哔哩哔哩">
@@ -65,6 +71,7 @@
             </div>
         </div>
         <div class="inner-container">
+        <div class="text-section-title">网站导航</div>
             <div class="btn-row">
                 <button class="btn-nav-home" onclick="location.href='/articles'">
                     <span class="text-icon">
@@ -140,11 +147,6 @@
                     <button class="btn-carousel next" id="musicNextBtn">&gt;</button>
                     <div class="carousel-list" id="musicCarouselList">
                         <div class="music-player-iframe-container">
-                            <div class="yunmusic-iframe-transform">
-                                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="340" height="86"
-                                    src="https://music.163.com/outchain/player?type=2&id=2124462309&auto=1&height=66">
-                                </iframe>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,7 +175,7 @@
             </div>
             <div class="stats-item">
                 <i class="fas fa-clock stats-icon"></i>
-                <span class="stats-label">网站已运行</span>
+                <span class="stats-label">本站已运行</span>
                 <span class="stats-value" id="siteRuntime"></span>
             </div>
             <div class="stats-item">
@@ -182,10 +184,10 @@
                 <span class="stats-value" id="beijingTime"></span>
             </div>
             <div class="stats-item">
-                <i class="fas fa-hourglass-half stats-icon"></i>               
-                    <span class="stats-label">距离</span>
-                    <span class="stats-label" id="holidayName">春节</span>
-                    <span class="stats-value" id="countdownNumbers">计算中...</span>               
+                <i class="fas fa-hourglass-half stats-icon"></i>
+                <span class="stats-label">距离</span>
+                <span class="stats-label" id="holidayName">春节</span>
+                <span class="stats-value" id="countdownNumbers">计算中...</span>
             </div>
         </div>
         <footer>
@@ -252,23 +254,15 @@
                     <p>
                         <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
                         <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
-                        <button class="btn-switchto-choice"
-                            onclick=" location.href='/home#zh-tr'">繁體中文</button>
+                        <button class="btn-switchto-choice" onclick=" location.href='/home#zh-tr'">繁體中文</button>
                     </p>
                 </div>
+            </template>
         </div>
-        </template>
     </div>
-    <button id="btnSwitchTo" class="btn-switchto">
-        <span class="text-icon-switchto">
-            <i class="fas fa-exchange-alt"></i>
-            <span>切换</span>
-        </span>
-    </button>
     <button class="btn-backtotop" id="btnBackToTop">
         <i class="fas fa-arrow-up" style="font-size: 1.4rem;font-weight: bold;"></i>
     </button>
-    </div>
     <script defer src="js/sakura-falling.js"></script>
     <script defer src="js/darkmode.js"></script>
     <script defer src="js/Lightbox.js"></script>

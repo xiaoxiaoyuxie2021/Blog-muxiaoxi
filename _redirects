@@ -4,3 +4,4 @@
 /images     /images.html
 /videos     /videos.html
 /about      /about.html
+/articles/detail/*    /templates/article-detail.html   200

@@ -1,0 +1,128 @@
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.article-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    align-items: center;
+
+}
+
+.article-card:hover {
+    background-color: var(--button-hover-bg);
+    cursor: pointer;
+
+}
+
+.article-cover {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+
+}
+
+.article-content {
+    flex: 1;
+
+}
+
+.article-title-A {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+}
+
+.article-title-A a {
+    color: #333;
+    text-decoration: none;
+
+}
+
+.article-title-A a:hover {
+    text-decoration: none;
+    color: pink;
+
+}
+
+.article-desc {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 210, 220, 0.5);
+}
+
+.article-title-B {
+    font-family: 'Noto Sans SC Bold', "Times New Roman";
+    font-size: 28px;
+    color: #e85d75;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.article-meta-B {
+    font-family: 'Noto Sans SC Regular', "Times New Roman";
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.article-content {
+    font-size: 16px;
+    max-width: 60rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 40px;
+    margin-left: 4rem;
+    width: 100%;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+.article-content h2 {
+    color: #e85d75;
+    margin: 30px 0 15px;
+    font-size: 20px;
+}
+
+.article-banner {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-banner-info {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin-top: 8px;
+
+}
