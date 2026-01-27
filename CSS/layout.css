@@ -1,0 +1,14 @@
+/* 视频网格布局 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 50px;
+}
+
+/* 导航菜单容器 */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+

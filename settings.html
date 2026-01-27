@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="resource/pic/ico/logo.png" type="image/png">
+  <title>设置 - 沐咲汐的博客</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="Resource/IMAGES/icons/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/layout.css">
+  <link rel="stylesheet" href="CSS/component.css">
+  <link rel="stylesheet" href="CSS/container.css">
+  <link rel="stylesheet" href="CSS/text.css">
+  <link rel="stylesheet" href="CSS/buttons.css">
+  <link rel="stylesheet" href="CSS/fonts.css">
+  <link rel="stylesheet" href="CSS/sakura.css">
+  <link rel="stylesheet" href="CSS/settings.css">
+  <link rel="stylesheet" href="CSS/scrollbar.css">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <canvas class="sakura" id="sakura"></canvas>
+  <div class="glass">
+    <div class="inner-container">
+      <div class="content-container">
+        <div class="tab">
+          <ul class="tab-menu">
+            <li class="tab-item active" data-tab="player">
+              <i class="fas fa-video"></i>
+              <span>播放器设置</span>
+            </li>
+            <li class="tab-item" data-tab="browser">
+              <i class="fas fa-info-circle"></i>
+              <span>浏览信息</span>
+            </li>
+          </ul>
+        </div>
+        <div class="main-content">
+          <div class="content-header">
+            <h1 class="text-title-A">设置</h1>
+            <p class="text-title-B">管理您的账户偏好和网站设置</p>
+          </div>
+          <div class="content-card" id="player-tab">
+            <div class="card-header">
+              <h2 class="card-title"><i class="fas fa-video"></i> 播放器设置</h2>
+            </div>
+            <div class="inline-form-group"><label class="inline-form-label"><i
+                  class="fas fa-volume-up"></i><span>默认静音播放</span></label><label class="switch"><input
+                  type="checkbox"><span class="slider"></span></label></div>
+            <div class="inline-form-group"><label class="inline-form-label"><i
+                  class="fas fa-expand"></i><span>双击播放器全屏</span></label><label class="switch"><input type="checkbox"
+                  checked><span class="slider"></span></label></div>
+            <div class="inline-form-group"><label class="inline-form-label"><i
+                  class="fas fa-step-forward"></i><span>按空格键播放/暂停</span></label><label class="switch"><input
+                  type="checkbox" checked><span class="slider"></span></label></div>
+            <div class="form-group"><label class="form-label">默认播放质量</label><select class="form-select">
+                <option value="auto" selected>自动（根据网络状况）</option>
+                <option value="1080p">1080p 高清</option>
+                <option value="720p">720p 标清</option>
+                <option value="480p">480p 流畅</option>
+                <option value="360p">360p 省流量</option>
+              </select></div>
+            <div class="form-group"><label class="form-label">播放速度记忆</label><select class="form-select">
+                <option value="none">不记忆</option>
+                <option value="video" selected>按视频记忆</option>
+                <option value="global">全局统一</option>
+              </select></div>
+            <div class="btn-group"><button class="btn-save">保存设置</button></div>
+          </div>
+          <div class="content-card" id="browser-tab">
+            <div class="card-header">
+              <h2 class="card-title"><i class="fas fa-info-circle"></i> 浏览信息</h2>
+            </div>
+            <div class="browser-info-grid">
+              <div class="info-row">
+                <div class="info-label">浏览器名称</div>
+                <div class="info-value" id="browserName">-</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">浏览器版本</div>
+                <div class="info-value" id="browserVersion">-</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">操作系统</div>
+                <div class="info-value" id="platform">-</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">屏幕分辨率</div>
+                <div class="info-value" id="screenResolution">-</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">IP 地址</div>
+                <div class="info-value" id="ipAddress">-</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">网络状态</div>
+                <div class="info-value" id="networkStatus">-</div>
+              </div>
+            </div>
+            <div class="info-hint"><i class="fas fa-shield-alt"></i> 以上信息仅用于系统优化与故障排查</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/function.js"></script>
+  <script src="js/sakura-falling.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/base.js"></script>
+</body>
+
+</html>

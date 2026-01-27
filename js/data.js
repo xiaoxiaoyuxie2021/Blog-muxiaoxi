@@ -141,7 +141,7 @@ window.articles = [
     {
         id: "mua1",
         title: "制作博客网站的一些心得",
-        desc: "为什么会选择制作博客网站？这是因为我希望有一个属于自己的空间，分享我的兴趣和见解，同时也能记录生活中的点滴。",
+        desc: "为什么我会选择制作博客网站？",
         time: "2025-12-25",
         cover: "https://picsum.photos/180/120?random=1", // 占位图，替换为自己的封面
         banner: "https://picsum.photos/1080/400?random=10", // 可选文章头图
@@ -173,10 +173,10 @@ window.renderArticleList = function() {
         html += `
             <div class="article-card">
                 <img src="${article.cover}" alt="${article.title}" class="article-cover">
-                <div class="article-content">
+                <div class="article-details">
                     <h3 class="article-title-A"><a href="${link}">${article.title}</a></h3>
                     <p class="article-desc">${article.desc}</p>
-                    <p class="article-meta">发布时间：${article.time}</p>
+                    <p class="article-meta-A">发布时间：${article.time}</p>
                 </div>
             </div>
         `;

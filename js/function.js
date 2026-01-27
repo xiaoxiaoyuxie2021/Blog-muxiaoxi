@@ -39,3 +39,104 @@ if (btnBackToTop) {
     }
   });
 }
+
+/* 侧边栏开合 */
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarClose = document.getElementById('sidebarClose');
+
+if (sidebar && sidebarOverlay && sidebarToggle && sidebarClose) {
+  const openSidebar = () => {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('show');
+  };
+
+  const closeSidebar = () => {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('show');
+  };
+
+  sidebarToggle.addEventListener('click', openSidebar);
+  sidebarClose.addEventListener('click', closeSidebar);
+  sidebarOverlay.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.sidebar-links a').forEach((link) => {
+    link.addEventListener('click', closeSidebar);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeSidebar();
+    }
+  });
+}
+
+/* 分享弹窗 */
+const shareBackdrop = document.getElementById('shareBackdrop');
+const shareModal = document.getElementById('shareModal');
+const shareClose = document.getElementById('shareClose');
+const shareTriggers = document.querySelectorAll('#btnShare');
+const shareCopy = document.getElementById('shareCopy');
+const shareWeibo = document.getElementById('shareWeibo');
+const shareQQ = document.getElementById('shareQQ');
+const shareTwitter = document.getElementById('shareTwitter');
+
+const setShareLinks = () => {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title || '分享给你');
+  if (shareWeibo) shareWeibo.href = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
+  if (shareQQ) shareQQ.href = `https://connect.qq.com/widget/shareqq/index.html?url=${url}&title=${title}`;
+  if (shareTwitter) shareTwitter.href = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+};
+let openShare;
+let closeShare;
+
+if (shareBackdrop && shareModal && shareClose) {
+  setShareLinks();
+
+  openShare = () => {
+    shareBackdrop.classList.add('show');
+    shareModal.classList.add('show');
+  };
+
+  closeShare = () => {
+    shareBackdrop.classList.remove('show');
+    shareModal.classList.remove('show');
+  };
+
+  if (shareTriggers.length) {
+    shareTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openShare();
+      });
+    });
+  }
+
+  shareClose.addEventListener('click', closeShare);
+  shareBackdrop.addEventListener('click', closeShare);
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeShare();
+  });
+
+  if (shareCopy) {
+    shareCopy.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        shareCopy.innerHTML = '<i class="fas fa-check"></i><span>已复制</span>';
+        setTimeout(() => {
+          shareCopy.innerHTML = '<i class="fas fa-link"></i><span>复制链接</span>';
+        }, 1200);
+      } catch (err) {
+        console.error('复制失败', err);
+        shareCopy.innerHTML = '<i class="fas fa-times"></i><span>复制失败</span>';
+        setTimeout(() => {
+          shareCopy.innerHTML = '<i class="fas fa-link"></i><span>复制链接</span>';
+        }, 1400);
+      }
+    });
+  }
+}
