@@ -140,3 +140,61 @@ if (shareBackdrop && shareModal && shareClose) {
     });
   }
 }
+
+/* 留言区输入字数限制 */
+const commentBox = document.querySelector('.comment-box');
+const commentBubble = document.getElementById('commentBubble');
+
+if (commentBox) {
+  const maxChars = Math.max(parseInt(commentBox.dataset.maxChars || '300', 10) || 300, 1);
+  let lastValidHTML = commentBox.innerHTML;
+  let warnLock = false;
+  let bubbleTimer;
+
+  const placeCaretAtEnd = (el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  };
+
+  const warn = () => {
+    if (warnLock) return;
+    warnLock = true;
+    if (commentBubble) {
+      commentBubble.textContent = `最多只能输入 ${maxChars} 字`;
+      commentBubble.classList.add('show');
+      clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(() => {
+        commentBubble.classList.remove('show');
+      }, 1400);
+    }
+    setTimeout(() => {
+      warnLock = false;
+    }, 500);
+  };
+
+  commentBox.addEventListener('beforeinput', (e) => {
+    if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward' || e.inputType === 'insertParagraph') {
+      return;
+    }
+    const text = commentBox.innerText || '';
+    if (text.length >= maxChars) {
+      e.preventDefault();
+      warn();
+    }
+  });
+
+  commentBox.addEventListener('input', () => {
+    const text = commentBox.innerText || '';
+    if (text.length > maxChars) {
+      commentBox.innerHTML = lastValidHTML;
+      placeCaretAtEnd(commentBox);
+      warn();
+      return;
+    }
+    lastValidHTML = commentBox.innerHTML;
+  });
+}

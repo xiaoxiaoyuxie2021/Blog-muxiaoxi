@@ -5,32 +5,6 @@ if (typeof renderCategories === 'function') {
   renderCategories();
 }
 
-// ===== 初始化设置项可见性 =====
-function initSettingsVisibility() {
-  // 检查 isLoggedIn 函数是否存在
-  if (typeof isLoggedIn !== 'function') {
-    console.warn('isLoggedIn 函数未定义');
-    return;
-  }
-
-  const loggedIn = isLoggedIn();
-  const controlledTabs = ['account', 'privacy', 'security'];
-  
-  controlledTabs.forEach(tabName => {
-    // 控制侧边栏菜单项
-    const sidebarItem = document.querySelector(`.tab-item[data-tab="${tabName}"]`);
-    // 控制主内容卡片
-    const contentCard = document.getElementById(`${tabName}-tab`);
-
-    if (sidebarItem) {
-      sidebarItem.style.display = loggedIn ? '' : 'none';
-    }
-    if (contentCard) {
-      contentCard.style.display = loggedIn ? '' : 'none';
-    }
-  });
-}
-
 // ===== 激活第一个可见的设置项 =====
 function activateFirstVisibleTab() {
   const sidebarItems = document.querySelectorAll('.tab-item');
@@ -60,9 +34,6 @@ function activateFirstVisibleTab() {
 
 // ===== 设置页导航切换（修正类名）=====
 document.addEventListener('DOMContentLoaded', () => {
-  // 先初始化可见性（在渲染之前执行）
-  initSettingsVisibility();
-  
   const sidebarItems = document.querySelectorAll('.tab-item');
   // ✅ 修正：使用新的类名 .content-card
   const contentCards = document.querySelectorAll('.content-card');

@@ -22,10 +22,55 @@
     <link rel="stylesheet" href="CSS/scrollbar.css">
     <link rel="stylesheet" href="CSS/window.css">
     <link rel="stylesheet" href="CSS/article.css">
+    <link rel="stylesheet" href="CSS/layout.css">
+    <link rel="stylesheet" href="CSS/sidebar.css">
+    <link rel="stylesheet" href="CSS/shareto.css">
+
 </head>
 
 <body>
+    <canvas class="sakura" id="sakura"></canvas>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="share-backdrop" id="shareBackdrop"></div>
+    <div class="share-modal" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+        <div class="share-header">
+            <span class="share-title" id="shareTitle">分享至</span>
+            <button class="share-close" id="shareClose" aria-label="关闭分享弹窗">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="share-divider"></div>
+        <div class="share-links">
+            <a class="share-item" id="shareCopy" href="javascript:void(0)"><i
+                    class="fas fa-link"></i><span>复制链接</span></a>
+            <a class="share-item" id="shareWeibo" href="#" target="_blank" rel="noreferrer"><i
+                    class="fab fa-weibo"></i><span>微博</span></a>
+            <a class="share-item" id="shareQQ" href="#" target="_blank" rel="noreferrer"><i
+                    class="fab fa-qq"></i><span>QQ</span></a>
+            <a class="share-item" id="shareTwitter" href="#" target="_blank" rel="noreferrer"><i
+                    class="fab fa-twitter"></i><span>Twitter/X</span></a>
+        </div>
+    </div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">菜单</span>
+            <button class="sidebar-close" id="sidebarClose" aria-label="关闭侧边栏">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-divider"></div>
+        <ul class="sidebar-links">
+            <li><a href="/home"><i class="fas fa-home"></i><span>首页</span></a></li>
+            <li><a id="btnSwitchTo" href="javascript:void(0)"><i class="fas fa-exchange-alt"></i><span>切换</span></a>
+            </li>
+            <li><a id="btnShare" href="javascript:void(0)"><i class="fas fa-share-alt"></i><span>分享</span></a></li>
+            <li><a href="/settings" target="_blank"><i class="fas fa-cog"></i><span>设置</span></a></li>
+        </ul>
+    </aside>
     <div class="inner-container">
+        <div class="nav">
+            <i class="fas fa-bars" id="sidebarToggle" aria-label="打开侧边栏" style="cursor: pointer;"></i>
+        </div>
         <div class="article-header">
             <h1 class="article-title-B" id="articleTitle"></h1>
             <div class="article-meta-B">
@@ -40,7 +85,32 @@
         </div>
         <div class="article-content" id="articleContent"></div>
     </div>
+    <template id="switchto-template">
+        <div class="modal-content switchto-modal-content" style="padding:16px; position: relative;">
+            <button class="switchto-close" aria-label="关闭切换弹窗"><i class="fas fa-times"></i></button>
+            <h3 style="margin:0 0 0.5rem;color: black;">主题</h3>
+            <div class="share-divider" style="margin-top: 1rem;"></div>
+            <p>
+                <button class="btn-switchto-choice" onclick=" location.href='/home-simple'">简洁版</button>
+                <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
+                    data-theme-label-light="浅色版">深色版</button>
+            </p>
+            <h3 style="margin:2rem 0 0.5rem;color: black;">语言</h3>
+            <div class="share-divider" style="margin-top: 1rem;"></div>
+            <p>
+                <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
+                <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
+                <button class="btn-switchto-choice" onclick=" location.href='/home#zh-tr'">繁體中文</button>
+            </p>
+        </div>
+    </template>
+
     <script defer src="js/data.js"></script>
+    <script defer src="js/sakura-falling.js"></script>
+    <script defer src="js/darkmode.js"></script>
+    <script defer src="js/switchto.js"></script>
+    <script defer src="js/function.js"></script>
+
 </body>
 
 </html>

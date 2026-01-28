@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920,user-scalable=yes">
+  <title>404 - 页面未找到 | 沐咲汐的博客</title>
+  <meta name="description" content="页面未找到 - 沐咲汐的博客">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="Resource/IMAGES/icons/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="CSS/container.css">
+  <link rel="stylesheet" href="CSS/text.css">
+  <link rel="stylesheet" href="CSS/buttons.css">
+  <link rel="stylesheet" href="CSS/sakura.css">
+  <link rel="stylesheet" href="CSS/image.css">
+  <link rel="stylesheet" href="CSS/scrollbar.css">
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/components.css">
+  <link rel="stylesheet" href="CSS/animations.css">
+  <link rel="stylesheet" href="CSS/dark.css">
+  <link rel="stylesheet" href="CSS/fonts.css">
+  <link rel="stylesheet" href="CSS/layout.css">
+</head>
+
+<body>
+  <canvas class="sakura" id="sakura"></canvas>
+  <div class="glass">
+    <div class="inner-container" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;min-height:55vh;">
+      <div>
+        <div class="text-title-A" style="color:#e85d75;font-size: 3rem;">404</div>
+        <p class="text-title-B" style="margin-top:0.5rem;">页面走丢啦，可能被小精灵带走了~</p>
+        <div class="text-body" style="margin:1rem 0 0 1.2rem;color:#555;">
+          你访问的链接不存在或已被移动。
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <button class="btn-nav-home" onclick="location.href='/home'" style="width: 10rem;margin-top: 2rem;margin-left: 1rem;">
+            <span class="text-icon">
+              <i class="fas fa-home"></i>
+              <span>返回首页</span>
+            </span>
+          </button>
+          <button class="btn-nav-home" onclick="history.back()" style="width: 10rem;margin-top: 2rem;">
+            <span class="text-icon">
+              <i class="fas fa-arrow-left"></i>
+              <span>返回上一页</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;min-width:220px;">
+        <div style="font-size:6rem;color:#f48fb1;opacity:0.9;">
+          <i class="fas fa-ghost"></i>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p class="text-footer">唯深衷之思，可越千载之隔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2026 沐咲汐. 保留所有权利.</p>
+    </footer>
+  </div>
+  <script defer src="js/sakura-falling.js"></script>
+</body>
+
+</html>

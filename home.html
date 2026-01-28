@@ -62,7 +62,7 @@
         <ul class="sidebar-links">
             <li><a id="btnSwitchTo" href="javascript:void(0)"><i class="fas fa-exchange-alt"></i><span>切换</span></a></li>
             <li><a id="btnShare" href="javascript:void(0)"><i class="fas fa-share-alt"></i><span>分享</span></a></li>
-            <li><a href="/settings"><i class="fas fa-cog"></i><span>设置</span></a></li>
+            <li><a href="/settings" target="_blank"><i class="fas fa-cog"></i><span>设置</span></a></li>
         </ul>
     </aside>
     <div class="glass">
@@ -186,7 +186,8 @@
         <div class="inner-container">
             <div class="text-section-title">留言区</div>
             <div class="container-send-comment">
-                <div class="comment-box" contenteditable="true" data-placeholder="不来吐槽几句嘛..."></div>
+                <div class="comment-box" contenteditable="true" data-placeholder="不来吐槽几句嘛..." data-max-chars="300"></div>
+                <div class="comment-bubble" id="commentBubble" role="status" aria-live="polite"></div>
                 <button class="btn-submit" onclick="alert('感谢你的留言！不过留言板功能尚未开放哦。')">提交</button>
             </div>
             <div class="container-comments">

@@ -28,3 +28,36 @@
     pointer-events: none;
 }
 
+.comment-bubble {
+    position: absolute;
+    top: 50%;
+    left: calc(80% + 1.2rem);
+    transform: translateY(-50%) scale(0.96);
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 5;
+}
+
+.comment-bubble::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 6px 6px 0;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.78) transparent transparent;
+}
+
+.comment-bubble.show {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
