@@ -1,11 +1,19 @@
 .btn-row {
     display: flex;
     margin: auto;
-    display: flex;
     align-items: center;
     justify-content: center;
     gap: 12rem;
 
+}
+
+.btn-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-nav-home {
@@ -77,7 +85,7 @@
     border-radius: 30px;
     border: white solid 1px;
     height: 3rem;
-    width: 7.9rem;
+    width: 15rem;
 
 }
 

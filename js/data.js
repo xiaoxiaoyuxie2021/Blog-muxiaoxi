@@ -54,17 +54,40 @@ window.musicPlayerData = [
     }
 	,
     { 
-        src: "https://music.163.com/outchain/player?type=2&id=1461071138&auto=1&height=66",
-        width: "340",
-        height: "100"
-    }
-	,
-    { 
         src: "https://music.163.com/outchain/player?type=2&id=1963053471&auto=1&height=66",
         width: "340",
         height: "100"
     }
 
+];
+
+// 博客首页音乐歌词数据（与 musicPlayerData 一一对应）
+window.musicLyricsData = [
+    {
+        title: "妄想感傷代償連盟 (feat. 宵崎奏&東雲絵名&初音ミク)",
+        artist: "25時、ナイトコードで。/初音ミク",
+        lyrics:"だから妄想感傷代償連盟\n愛を懐いて理想を号んだ\n行き場のない愚者のメロディー\n再挑戰・転生・テレポーテーション\n何回だって 重ねて逝くんだ\n終わりなき愛の隨に さあ"
+    },
+    {
+        title: "相思若循",
+        artist: "洛天依Official/乐正绫",
+        lyrics:"诗中人 苍茫云海间\n数圆缺 风雨杳如年\n不敢问书笺 心事托鸿雁\n愿此生若只如初见"
+    },
+    {
+        title: "Bad Apple!! feat.SEKAI",
+        artist: "25時、ナイトコードで。",
+        lyrics:"夢見てる？\n何も見てない？\n語るも無駄な 自分の言葉？\n悲しむなんて 疲れるだけよ\n過ごせばいいの\n戸惑う言葉 与えられても\n自分の心 ただ上の空\nもし私から 動くのならば\nすべて変えるのなら 黒にする"
+    },
+    {
+        title: "極私的極彩色アンサー",
+        artist: "トゲナシトゲアリ",
+        lyrics:"平気って　澄ました　その仮面を壊したなら\n免疫も死んだ　嘘だらけの世界塗りつぶせ\n一通も　誰にも　届かないとしたって\n撃ち抜く真実はいつも正しさだけ\nただ、その証明"
+    },
+    {
+        title: "光与影的对白",
+        artist: "洛天依Official",
+        lyrics:"将故事传颂吧\n风携它远追\n向宿命改写时\n字句皆成碑"
+    }
 ];
 
 // 渲染函数：将音乐 data 渲染到指定列表容器（与视频轮播隔离，避免选择器互相影响）
@@ -73,10 +96,10 @@ window.renderMusicCarouselItems = function(listId) {
   if (!list || !Array.isArray(window.musicPlayerData)) return;
 
   list.innerHTML = '';
-  window.musicPlayerData.forEach((item, idx) => {
+    window.musicPlayerData.forEach((item, idx) => {
     const div = document.createElement('div');
     div.className = 'carousel-item music-item' + (idx + 1);
-    div.style.cssText = 'position:relative;width:100%;height:' + (item.height || '86') + 'px;overflow:hidden;border-radius:8px;';
+        div.style.cssText = 'position:relative;width:100%;height:auto;overflow:hidden;border-radius:8px;';
 
     const outer = document.createElement('div');
     outer.className = 'music-player-iframe-container';
@@ -95,6 +118,22 @@ window.renderMusicCarouselItems = function(listId) {
     inner.appendChild(iframe);
     outer.appendChild(inner);
     div.appendChild(outer);
+
+        const lyric = (window.musicLyricsData && window.musicLyricsData[idx]) || {};
+        const lyricBox = document.createElement('div');
+        lyricBox.className = 'music-lyrics';
+        const lyricTitle = document.createElement('div');
+        lyricTitle.className = 'music-lyrics-title';
+        lyricTitle.textContent = lyric.title || '未命名曲目';
+        const lyricArtist = document.createElement('div');
+        lyricArtist.className = 'music-lyrics-artist';
+        lyricArtist.textContent = lyric.artist ? `演唱：${lyric.artist}` : '';
+        const lyricText = document.createElement('div');
+        lyricText.textContent = lyric.lyrics || '暂无歌词';
+        lyricBox.appendChild(lyricTitle);
+        lyricBox.appendChild(lyricArtist);
+        lyricBox.appendChild(lyricText);
+        div.appendChild(lyricBox);
     list.appendChild(div);
   });
 };
@@ -104,6 +143,124 @@ window.renderMusicCarouselItems = function(listId) {
 window.renderCarousel = function(type, listId) {
 	if (type === 'video') return window.renderCarouselItems(listId);
 	if (type === 'music') return window.renderMusicCarouselItems(listId);
+};
+
+// 视频网格数据（视频页）
+window.videoGridData = [
+    {
+        title: "番剧安利",
+        desc: "不容错过的精彩推荐",
+        cover: "https://picsum.photos/640/360?random=26",
+        link: "https://www.bilibili.com"
+    }
+];
+
+// 渲染视频网格
+window.renderVideoGrid = function(gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid || !Array.isArray(window.videoGridData)) return;
+
+    grid.innerHTML = '';
+    window.videoGridData.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+
+        const link = document.createElement('a');
+        link.className = 'video-link';
+        link.href = item.link || '#';
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+
+        const thumb = document.createElement('div');
+        thumb.className = 'video-thumb';
+
+        const img = document.createElement('img');
+        img.src = item.cover;
+        img.alt = item.title || '视频封面';
+
+        const play = document.createElement('div');
+        play.className = 'video-play';
+        play.innerHTML = '<i class="fas fa-play-circle"></i>';
+
+        const info = document.createElement('div');
+        info.className = 'video-info';
+        const title = document.createElement('div');
+        title.className = 'video-title';
+        title.textContent = item.title || '未命名视频';
+        const meta = document.createElement('div');
+        meta.className = 'video-meta';
+        meta.textContent = item.desc || '';
+
+        thumb.appendChild(img);
+        thumb.appendChild(play);
+        info.appendChild(title);
+        info.appendChild(meta);
+        link.appendChild(thumb);
+        link.appendChild(info);
+        card.appendChild(link);
+        grid.appendChild(card);
+    });
+};
+
+// 图片网格数据（图片页）
+window.imageGridData = [
+    {
+        title: "某科学的超电磁炮",
+        desc: "你手中跃动的电光",
+        tag: "动漫",
+        cover: "https://picsum.photos/640/480?random=41",
+        link: "https://www.bilibili.com"
+    }
+    ];
+
+// 渲染图片网格
+window.renderImageGrid = function(gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid || !Array.isArray(window.imageGridData)) return;
+
+    grid.innerHTML = '';
+    window.imageGridData.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'image-card';
+
+        const link = document.createElement('a');
+        link.className = 'image-link';
+        link.href = item.link || '#';
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+
+        const thumb = document.createElement('div');
+        thumb.className = 'image-thumb';
+
+        const img = document.createElement('img');
+        img.src = item.cover;
+        img.alt = item.title || '图片';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'image-overlay';
+        const title = document.createElement('div');
+        title.className = 'image-title';
+        title.textContent = item.title || '';
+        const tag = document.createElement('div');
+        tag.className = 'image-tag';
+        tag.textContent = item.tag || '';
+
+        const info = document.createElement('div');
+        info.className = 'image-info';
+        const desc = document.createElement('p');
+        desc.className = 'image-desc';
+        desc.textContent = item.desc || '';
+
+        overlay.appendChild(title);
+        overlay.appendChild(tag);
+        info.appendChild(desc);
+        thumb.appendChild(img);
+        thumb.appendChild(overlay);
+        link.appendChild(thumb);
+        link.appendChild(info);
+        card.appendChild(link);
+        grid.appendChild(card);
+    });
 };
 
 // 3. 通用轮播切换逻辑：支持多轮播实例
@@ -256,5 +413,7 @@ window.renderArticleDetail = function() {
 document.addEventListener('DOMContentLoaded', () => {
     window.renderArticleList();
     window.renderArticleDetail();
+    window.renderVideoGrid('videoGrid');
+    window.renderImageGrid('imageGrid');
 });
 

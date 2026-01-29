@@ -104,3 +104,42 @@
     cursor: pointer;
 }
 
+.tag {
+    background: rgba(244, 143, 177, 0.15);
+    color: #e85d75;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.about-intro {
+    margin-top: 0.4rem;
+    color: #666;
+    margin-left: 1rem;
+}
+
+.about-section h3 {
+    margin: 0 0 0.4rem;
+    color: #333;
+}
+
+.about-highlight {
+    color: #e85d75;
+    font-weight: 600;
+}
+
+.about-meta {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 1.2rem 1rem;
+}
+
+.about-section {
+    margin-top: 1rem;
+    padding: 12px 14px;
+    border-left: 3px solid #f48fb1;
+    background: rgba(255, 240, 245, 0.5);
+    border-radius: 10px;
+}

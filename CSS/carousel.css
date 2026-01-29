@@ -16,6 +16,19 @@
     height: 12rem;
 }
 
+/* 音乐轮播：允许自适应高度，避免歌词挤压播放器 */
+#musicCarousel .carousel-list {
+    height: auto;
+    align-items: flex-start;
+    padding-bottom: 0.6rem;
+}
+
+#musicCarousel .carousel-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
 .carousel-item {
     flex-shrink: 0;
     box-sizing: border-box;
@@ -23,8 +36,8 @@
 
 .btn-carousel {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0.6rem;
+    transform: none;
     background-color: pink;
     border: none;
     color: #fff;
@@ -51,14 +64,14 @@
 
 
 .prev {
-    left: 0.5rem;
+    left: 0.6rem;
     font-size: 1rem;
     font-weight: bold;
 
 }
 
 .next {
-    right: 0.5rem;
+    right: 0.6rem;
     font-size: 1rem;
     font-weight: bold;
 

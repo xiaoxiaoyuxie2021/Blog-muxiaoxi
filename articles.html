@@ -61,9 +61,50 @@
         <div class="sidebar-divider"></div>
         <ul class="sidebar-links">
             <li><a href="/home"><i class="fas fa-home"></i><span>首页</span></a></li>
-            <li><a id="btnSwitchTo" href="javascript:void(0)"><i class="fas fa-exchange-alt"></i><span>切换</span></a>
+            <li class="sidebar-switch">
+                <a id="btnSwitchToggle" href="javascript:void(0)" data-no-close="true">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>切换</span>
+                    <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                </a>
+                <ul class="sidebar-submenu" id="switchMenu">
+                    <li class="sidebar-subgroup">
+                        <a href="javascript:void(0)" class="sidebar-subtoggle" data-no-close="true">
+                            <span>主题</span>
+                            <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="/home-simple">简洁版</a></li>
+                            <li><a class="btn-theme-toggle" data-theme-label-dark="深色版" data-theme-label-light="浅色版" href="javascript:void(0)">深色版</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-subgroup">
+                        <a href="javascript:void(0)" class="sidebar-subtoggle" data-no-close="true">
+                            <span>语言</span>
+                            <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="/home#en">English</a></li>
+                            <li><a href="/home#ja">日本語</a></li>
+                            <li><a href="/home#zh-tr">繁體中文</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li><a id="btnShare" href="javascript:void(0)"><i class="fas fa-share-alt"></i><span>分享</span></a></li>
+            <li class="sidebar-friend">
+                <a id="btnFriendLink" href="javascript:void(0)" data-no-close="true">
+                    <i class="fas fa-link"></i>
+                    <span>友链</span>
+                    <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                </a>
+                <ul class="sidebar-submenu" id="friendLinks">
+                    <li><a href="https://music.163.com/" target="_blank">网易云音乐</a></li>
+                    <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a></li>
+                    <li><a href="https://mc.kurogames.com/" target="_blank">鸣潮</a></li>                
+                    <li><a href="https://bluearchive-cn.com/" target="_blank">蔚蓝档案</a></li>                
+                </ul>
+            </li>
             <li><a href="/settings" target="_blank"><i class="fas fa-cog"></i><span>设置</span></a></li>
         </ul>
     </aside>
@@ -79,25 +120,6 @@
             <div class="article-list" id="articleList">
             </div>
         </div>
-        <template id="switchto-template">
-            <div class="modal-content switchto-modal-content" style="padding:16px; position: relative;">
-                <button class="switchto-close" aria-label="关闭切换弹窗"><i class="fas fa-times"></i></button>
-                <h3 style="margin:0 0 0.5rem;color: black;">主题</h3>
-                <div class="share-divider" style="margin-top: 1rem;"></div>
-                <p>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home-simple'">简洁版</button>
-                    <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
-                        data-theme-label-light="浅色版">深色版</button>
-                </p>
-                <h3 style="margin:2rem 0 0.5rem;color: black;">语言</h3>
-                <div class="share-divider" style="margin-top: 1rem;"></div>
-                <p>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#zh-tr'">繁體中文</button>
-                </p>
-            </div>
-        </template>
     </div>
     <button class="btn-backtotop" id="btnBackToTop">
         <i class="fas fa-arrow-up" style="font-size: 1.4rem;font-weight: bold;"></i>
@@ -105,7 +127,6 @@
     </div>
     <script defer src="js/sakura-falling.js"></script>
     <script defer src="js/darkmode.js"></script>
-    <script defer src="js/switchto.js"></script>
     <script defer src="js/function.js"></script>
     <script defer src="js/data.js"></script>
 </body>

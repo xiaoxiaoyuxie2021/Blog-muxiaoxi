@@ -21,12 +21,23 @@
                 let itemWidth = 0;
                 let timer = null;
                 const autoplayInterval = typeof opts.autoplayInterval === 'number' ? opts.autoplayInterval : 0;
+                const autoHeight = !!opts.autoHeight;
+
+                function updateHeight() {
+                    if (!autoHeight) return;
+                    const currentItem = items[currentIndex];
+                    if (currentItem) {
+                        const height = currentItem.offsetHeight;
+                        if (height) container.style.height = height + 'px';
+                    }
+                }
 
                 function applyLayout() {
                     itemWidth = container.offsetWidth;
                     items.forEach(item => item.style.width = itemWidth + 'px');
                     list.style.width = (itemWidth * itemNum) + 'px';
                     list.style.left = `-${currentIndex * itemWidth}px`;
+                    updateHeight();
                 }
 
                 function normalizeIndex() {
@@ -38,11 +49,13 @@
                     currentIndex++;
                     normalizeIndex();
                     list.style.left = `-${currentIndex * itemWidth}px`;
+                    updateHeight();
                 }
                 function goPrev() {
                     currentIndex--;
                     normalizeIndex();
                     list.style.left = `-${currentIndex * itemWidth}px`;
+                    updateHeight();
                 }
 
                 function stopAutoplay() {
@@ -75,6 +88,7 @@
                 window.addEventListener('resize', applyLayout);
 
                 applyLayout();
+                updateHeight();
                 startAutoplay();
             }
 
@@ -100,6 +114,7 @@
                     if (typeof window.renderMusicCarouselItems === 'function') window.renderMusicCarouselItems(listId);
                     else if (typeof window.renderCarousel === 'function') window.renderCarousel('music', listId);
                 },
-                autoplayInterval: 0
+                autoplayInterval: 0,
+                autoHeight: true
             });
         });

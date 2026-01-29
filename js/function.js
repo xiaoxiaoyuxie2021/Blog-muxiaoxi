@@ -55,6 +55,10 @@ if (sidebar && sidebarOverlay && sidebarToggle && sidebarClose) {
   const closeSidebar = () => {
     sidebar.classList.remove('open');
     sidebarOverlay.classList.remove('show');
+    const friendItem = document.querySelector('.sidebar-friend');
+    if (friendItem) friendItem.classList.remove('open');
+    const switchItem = document.querySelector('.sidebar-switch');
+    if (switchItem) switchItem.classList.remove('open');
   };
 
   sidebarToggle.addEventListener('click', openSidebar);
@@ -62,6 +66,7 @@ if (sidebar && sidebarOverlay && sidebarToggle && sidebarClose) {
   sidebarOverlay.addEventListener('click', closeSidebar);
 
   document.querySelectorAll('.sidebar-links a').forEach((link) => {
+    if (link.dataset.noClose === 'true') return;
     link.addEventListener('click', closeSidebar);
   });
 
@@ -69,6 +74,38 @@ if (sidebar && sidebarOverlay && sidebarToggle && sidebarClose) {
     if (event.key === 'Escape') {
       closeSidebar();
     }
+  });
+}
+
+/* 侧边栏友链展开/收起 */
+const friendToggle = document.getElementById('btnFriendLink');
+const friendLinks = document.getElementById('friendLinks');
+
+if (friendToggle && friendLinks) {
+  friendToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const parent = friendToggle.closest('.sidebar-friend');
+    if (parent) parent.classList.toggle('open');
+  });
+}
+
+/* 侧边栏切换展开/收起 */
+const switchToggle = document.getElementById('btnSwitchToggle');
+const switchMenu = document.getElementById('switchMenu');
+
+if (switchToggle && switchMenu) {
+  switchToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const parent = switchToggle.closest('.sidebar-switch');
+    if (parent) parent.classList.toggle('open');
+  });
+
+  switchMenu.querySelectorAll('.sidebar-subtoggle').forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const group = toggle.closest('.sidebar-subgroup');
+      if (group) group.classList.toggle('open');
+    });
   });
 }
 
@@ -141,12 +178,13 @@ if (shareBackdrop && shareModal && shareClose) {
   }
 }
 
-/* 留言区输入字数限制 */
+/* 留言区输入字数/空行限制 */
 const commentBox = document.querySelector('.comment-box');
 const commentBubble = document.getElementById('commentBubble');
 
 if (commentBox) {
   const maxChars = Math.max(parseInt(commentBox.dataset.maxChars || '300', 10) || 300, 1);
+  const maxBlankLines = 14;
   let lastValidHTML = commentBox.innerHTML;
   let warnLock = false;
   let bubbleTimer;
@@ -160,11 +198,11 @@ if (commentBox) {
     sel.addRange(range);
   };
 
-  const warn = () => {
+  const warn = (message) => {
     if (warnLock) return;
     warnLock = true;
     if (commentBubble) {
-      commentBubble.textContent = `最多只能输入 ${maxChars} 字`;
+      commentBubble.textContent = message;
       commentBubble.classList.add('show');
       clearTimeout(bubbleTimer);
       bubbleTimer = setTimeout(() => {
@@ -176,6 +214,11 @@ if (commentBox) {
     }, 500);
   };
 
+  const countBlankLines = (text) => {
+    const lines = (text || '').replace(/\r/g, '').split('\n');
+    return lines.filter((line) => line.trim() === '').length;
+  };
+
   commentBox.addEventListener('beforeinput', (e) => {
     if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward' || e.inputType === 'insertParagraph') {
       return;
@@ -183,7 +226,7 @@ if (commentBox) {
     const text = commentBox.innerText || '';
     if (text.length >= maxChars) {
       e.preventDefault();
-      warn();
+      warn(`最多只能输入 ${maxChars} 字`);
     }
   });
 
@@ -192,7 +235,14 @@ if (commentBox) {
     if (text.length > maxChars) {
       commentBox.innerHTML = lastValidHTML;
       placeCaretAtEnd(commentBox);
-      warn();
+      warn(`最多只能输入 ${maxChars} 字`);
+      return;
+    }
+    const blankLines = countBlankLines(text);
+    if (blankLines > maxBlankLines) {
+      commentBox.innerHTML = lastValidHTML;
+      placeCaretAtEnd(commentBox);
+      warn('干嘛按这么多回车键呀~');
       return;
     }
     lastValidHTML = commentBox.innerHTML;

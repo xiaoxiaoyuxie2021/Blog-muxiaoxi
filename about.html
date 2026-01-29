@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="CSS/layout.css">
     <link rel="stylesheet" href="CSS/sidebar.css">
     <link rel="stylesheet" href="CSS/shareto.css">
+    <link rel="stylesheet" href="CSS/author-card.css">
+    <link rel="stylesheet" href="CSS/scrollbar.css">
+    <link rel="stylesheet" href="CSS/dark.css">
 </head>
 
 <body>
@@ -55,9 +58,51 @@
         <div class="sidebar-divider"></div>
         <ul class="sidebar-links">
             <li><a href="/home"><i class="fas fa-home"></i><span>首页</span></a></li>
-            <li><a id="btnSwitchTo" href="javascript:void(0)"><i class="fas fa-exchange-alt"></i><span>切换</span></a>
+            <li class="sidebar-switch">
+                <a id="btnSwitchToggle" href="javascript:void(0)" data-no-close="true">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>切换</span>
+                    <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                </a>
+                <ul class="sidebar-submenu" id="switchMenu">
+                    <li class="sidebar-subgroup">
+                        <a href="javascript:void(0)" class="sidebar-subtoggle" data-no-close="true">
+                            <span>主题</span>
+                            <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="/home-simple">简洁版</a></li>
+                            <li><a class="btn-theme-toggle" data-theme-label-dark="深色版" data-theme-label-light="浅色版"
+                                    href="javascript:void(0)">深色版</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-subgroup">
+                        <a href="javascript:void(0)" class="sidebar-subtoggle" data-no-close="true">
+                            <span>语言</span>
+                            <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="/home#en">English</a></li>
+                            <li><a href="/home#ja">日本語</a></li>
+                            <li><a href="/home#zh-tr">繁體中文</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li><a id="btnShare" href="javascript:void(0)"><i class="fas fa-share-alt"></i><span>分享</span></a></li>
+            <li class="sidebar-friend">
+                <a id="btnFriendLink" href="javascript:void(0)" data-no-close="true">
+                    <i class="fas fa-link"></i>
+                    <span>友链</span>
+                    <i class="fas fa-chevron-down sidebar-caret" aria-hidden="true"></i>
+                </a>
+                <ul class="sidebar-submenu" id="friendLinks">
+                    <li><a href="https://music.163.com/" target="_blank">网易云音乐</a></li>
+                    <li><a href="https://www.bilibili.com/" target="_blank">哔哩哔哩</a></li>
+                    <li><a href="https://mc.kurogames.com/" target="_blank">鸣潮</a></li>                
+                    <li><a href="https://bluearchive-cn.com/" target="_blank">蔚蓝档案</a></li>                
+                </ul>
+            </li>
             <li><a href="/settings" target="_blank"><i class="fas fa-cog"></i><span>设置</span></a></li>
         </ul>
     </aside>
@@ -67,29 +112,56 @@
                 <i class="fas fa-bars" id="sidebarToggle" aria-label="打开侧边栏" style="cursor: pointer;"></i>
             </div>
             <h1 class="text-title-A">关于本站</h1>
-        </div>
-        <template id="switchto-template">
-            <div class="modal-content switchto-modal-content" style="padding:16px; position: relative;">
-                <button class="switchto-close" aria-label="关闭切换弹窗"><i class="fas fa-times"></i></button>
-                <h3 style="margin:0 0 0.5rem;color: black;">主题</h3>
-                <div class="share-divider" style="margin-top: 1rem;"></div>
-                <p>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home-simple'">简洁版</button>
-                    <button class="btn-switchto-choice btn-theme-toggle" data-theme-label-dark="深色版"
-                        data-theme-label-light="浅色版">深色版</button>
-                </p>
-                <h3 style="margin:2rem 0 0.5rem;color: black;">语言</h3>
-                <div class="share-divider" style="margin-top: 1rem;"></div>
-                <p>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#en'">English</button>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#ja'">日本語</button>
-                    <button class="btn-switchto-choice" onclick=" location.href='/home#zh-tr'">繁體中文</button>
-                </p>
+            <p class="about-intro">记录灵感、分享热爱、留下成长的足迹。</p>
+            <div class="about-meta">
+                <span class="tag">二次元</span>
+                <span class="tag">动漫</span>
+                <span class="tag">游戏</span>
+                <span class="tag">音乐</span>
+                <span class="tag">日常</span>
             </div>
-        </template>
+            <div class="text-body about-card" style="line-height: 1.8;">
+                <p>欢迎来到沐咲汐的博客！这里是一片温柔又热闹的小天地，记录二次元、动漫、游戏、音乐与日常。无论你是资深玩家还是刚入坑的新朋友，都希望能在这里找到被治愈的瞬间。</p>
+                <div class="about-section">
+                    <h3>本站内容</h3>
+                    <p>本站主要包含：动漫/番剧安利与观感、游戏体验与小技巧、视觉灵感与壁纸分享、日常记录与随想碎碎念。内容以轻松、真诚为主，也会适当做一些整理与归档，方便大家浏览。</p>
+                </div>
+                <div class="about-section">
+                    <h3>写作理念</h3>
+                    <p>我更在意“真实”和“可读性”。不追热点，只分享自己喜欢的东西；不追繁琐，只希望每篇内容都能让你读得舒服、看得开心。</p>
+                </div>
+                <div class="about-section">
+                    <h3>更新频率</h3>
+                    <p>不定期更新。如果你喜欢某个系列或希望新增栏目，欢迎给我留言。</p>
+                </div>
+                <div class="about-section">
+                    <h3>版权声明</h3>
+                    <p>除特别说明外，本站内容均为原创或已获得授权转载。图片与视频素材来源于公开平台，若有侵权请联系我删除。</p>
+                </div>
+                <div class="about-section">
+                    <h3>联系与合作</h3>
+                    <p>如有建议、反馈或合作意向，请在首页的联系方式与我联系，也欢迎在留言区留下你的想法。</p>
+                </div>
+                <p>感谢你的访问，愿你在这里收获灵感与好心情！</p>
+            </div>
+            <div class="author-card">
+                <img src="/Resource/IMAGES/avatar/my_avatar.jpg" alt="博主头像" class="author-avatar">
+                <div class="author-info">
+                    <div class="author-name">沐咲汐</div>
+                    <p class="author-desc">二次元爱好者 / 轻度游戏玩家 / 记录生活与灵感的普通人。喜欢音乐、插画与温柔的日常。</p>
+                    <div class="author-links">
+                        <a href="https://space.bilibili.com/431028772" target="_blank" aria-label="哔哩哔哩">
+                            <i class="fab fa-bilibili"></i> 哔哩哔哩
+                        </a>
+                        <a href="https://github.com/xiaoxiaoyuxie2021" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script defer src="js/sakura-falling.js"></script>
 <script defer src="js/function.js"></script>
-<script defer src="js/switchto.js"></script>
 <script defer src="js/darkmode.js"></script>
